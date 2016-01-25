@@ -1,0 +1,338 @@
+// *************************************
+//
+//   Config
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   @font-face
+// -------------------------------------
+
+// ----- Open Sans ----- //
+
+// +font-face('OpenSans', 'OpenSans')
+// +font-face('OpenSans', 'OpenSansBold', bold)
+// +font-face('OpenSans', 'OpenSansItalic', normal, italic)
+
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+// ----- Palette ----- //
+$plum :  #fff;
+
+$white : #ffffff;
+$blue  : #2196f3;
+$red   : #f44336;
+$pink  : #ff4081;
+
+// ----- Base ----- //
+
+$c-background-invert : #fff;
+$c-background        : #ecf0f1;
+$c-text-invert       : #fff;
+$c-text              : #444;
+$c-border            : lighten($plum, 30%);
+$c-highlight         : $plum;
+$c-subdue            : lighten($plum, 40%);
+
+// Degrees
+$deg-dark    : 8%;
+$deg-darker  : 13%;
+$deg-light   : 8%;
+$deg-lighter : 13%;
+
+// Primary Colors
+
+$c-basis   : $white;
+$c-primary : $blue;
+$c-danger  : $red;
+$c-accent    : $pink;
+
+
+// white Colors
+
+$c-white        : #ffffff;
+$c-black        : #323232;
+$c-white         : $white;
+$c-white-light   : lighten($c-white, 10%);
+$c-white-lighter : lighten($c-white, 15%);
+$c-white-dark    : darken($c-white,  10%);
+$c-white-darker  : darken($c-white,  15%);
+
+// Link Colors
+
+$c-link-static     : inherit;
+$c-link-disabled   : $c-white-light;
+
+
+// Gradient End Colors
+
+$c-end-basis   : darken($c-basis, $deg-dark);
+$c-end-primary : darken($c-primary, $deg-darker   * 1.5);
+$c-end-danger  : darken($c-danger, $deg-darker * 1.5);
+$c-end-accent    : darken($c-accent, $deg-darker   * 1.5);
+
+// hover Colors
+
+$c-hov-basis   : $c-basis;
+$c-hov-primary : lighten($c-primary, 5%);
+$c-hov-danger  : lighten($c-danger, 5%);
+$c-hov-accent    : lighten($c-accent, 5%);
+
+// Disabled Colors
+
+$c-dis-basis   : $c-basis;
+$c-dis-primary : lighten($c-primary, $deg-light);
+$c-dis-danger  : lighten($c-danger, $deg-light);
+$c-dis-accent    : lighten($c-accent, $deg-light);
+
+// Border Colors
+
+$c-bd-white   : $c-white;
+$c-bd-black   : $c-black;
+$c-bd-light   : $c-white-light;
+$c-bd-dark    : $c-white-dark;
+$c-bd-basis   : $c-bd-dark;
+$c-bd-primary : darken($c-primary,   $deg-dark);
+$c-bd-danger  : darken($c-danger, $deg-dark);
+$c-bd-accent    : darken($c-accent,   $deg-dark);
+
+// Background Colors
+
+$c-bg-white   : $c-white;
+$c-bg-primary : $c-primary;
+$c-bg-danger  : $c-danger;
+$c-bg-accent    : $c-accent;
+
+
+// Shadows opacity
+
+$c-so-key-umbra: 0.2 !default;
+$c-so-key-penumbra: 0.14 !default;
+$c-so-ambient-shadow: 0.12 !default;
+
+// Translucent Colors
+
+$c-rgba-whit : rgba($c-white, .9);
+$c-rgba-blac : rgba($c-black, .4);
+
+// Shadow Colors
+
+$c-shadow-light : rgba($c-black, .2);
+$c-shadow-dark  : rgba($c-black, .5);
+
+// Highlight Colors
+
+$c-highlight-light : rgba($c-white, .1);
+$c-highlight-dark  : rgba($c-white, .5);
+
+// ----- Components ----- //
+
+// ...
+
+// ----- Structures ----- //
+
+// ...
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+// ----- Radius ----- //
+
+$b-rad-square      : 0;
+$b-rad-round       : 2px;
+$b-rad-round-inner : $b-rad-round - 1;
+$b-rad-circle      : 50%;
+$b-rad-pill        : 500px;
+
+// ----- Borders ----- //
+
+$b-bd-style      : solid;
+$b-bd-width      : 1px;
+$b-bd-width-bold : $b-bd-width * 2;
+$b-bd            : $b-bd-style $b-bd-width;
+
+// ----- Typography ----- //
+
+$b-fontFamily-heading : sans-serif;
+$b-fontFamily         : 'elvetica neue',tahoma,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+$b-fontSize           : 14px;
+$b-fontSize-xs        : 75%;
+$b-fontSize-s         : 90%;
+$b-fontSize-l         : 115%;
+$b-fontSize-xl        : 150%;
+$b-fontSize-h1        : 200%;
+$b-fontSize-h2        : 150%;
+$b-fontSize-h3        : 125%;
+$b-fontSize-h4        : 110%;
+$b-lineHeight         : 1.5;
+
+// ----- Font Size ----- //
+
+$b-fs-m       : 14px;
+$b-fs-xs      : round($b-fs-m * 0.714);
+$b-fs-s       : round($b-fs-m * 0.857);
+$b-fs-l       : round($b-fs-m * 1.1);
+$b-fs-xl      : round($b-fs-m * 1.29);
+$b-fs-half    : round($b-fs-m * 0.5);
+$b-fs-quarter : round($b-fs-m * 0.25);
+
+// ----- Line Height ----- //
+
+$b-lh    : 1.714;
+$b-lh-xs : round($b-fs-xs * $b-lh);
+$b-lh-s  : round($b-fs-s  * $b-lh);
+$b-lh-m  : round($b-fs-m  * $b-lh);
+$b-lh-l  : round($b-fs-l  * $b-lh);
+$b-lh-xl : round($b-fs-xl * $b-lh);
+
+// ----- Gap ----- //
+
+$b-vgap        : $b-fs-half;
+$b-hgap        : $b-fs-s;
+$b-cgap        : 20%;
+
+$b-hgap-half   : round($b-hgap / 2);
+$b-hgap-double : round($b-hgap * 2);
+$b-hgap-triple : round($b-hgap * 3);
+
+$b-vgap-half   : round($b-vgap / 2);
+$b-vgap-double : round($b-vgap * 2);
+$b-vgap-triple : round($b-vgap * 3);
+
+$b-cgap-half   : round($b-cgap / 2);
+$b-cgap-double : round($b-cgap * 2);
+$b-cgap-triple : round($b-cgap * 3);
+
+// ----- Index ----- //
+
+$b-idx-top         : 1400;
+$b-idx-middle      : 1300;
+$b-idx-bottom      : 1200;
+$b-idx-dropdown    : 1000;
+$b-idx-fixedTopbar : 1010;
+$b-idx-tooltip     : 1020;
+$b-idx-alert       : 1030;
+$b-idx-modal       : 1100;
+
+// ----- Borders & Box Shadow ----- //
+
+$b-borderRadius : 3px;
+
+// ----- Sizing ----- //
+
+$b-maxWidth   : em(1024px);
+$b-maxWidth-s : em(700px);
+$b-space      : em(20px);
+$b-space-xs   : $b-space * 0.25;
+$b-space-s    : $b-space * 0.5;
+$b-space-l    : $b-space * 2;
+$b-space-xl   : $b-space * 4;
+
+// -------------------------------------
+//   Components
+// -------------------------------------
+
+// ----- Separator ----- //
+
+$rule-offset-xs : round($b-fs-xs * -1);
+$rule-offset-s  : round($b-fs-s  * -1);
+$rule-offset-m  : round($b-fs-m  * -1);
+$rule-offset-l  : round($b-fs-l  * -1);
+$rule-offset-xl : round($b-fs-xl * -1);
+
+// ----- Ribbon ----- //
+
+$ribbon-width-radio : 2;
+
+$ribbon-height-xs   : ($b-vgap + $b-bd-width) * 2 + $b-lh-xs - 1;
+$ribbon-height-s    : ($b-vgap + $b-bd-width) * 2 + $b-lh-s  - 1;
+$ribbon-height-m    : ($b-vgap + $b-bd-width) * 2 + $b-lh-m  - 1;
+$ribbon-height-l    : ($b-vgap + $b-bd-width) * 2 + $b-lh-l  - 1;
+$ribbon-height-xl   : ($b-vgap + $b-bd-width) * 2 + $b-lh-xl - 1;
+
+// ----- Bubble ----- //
+
+$bubble-size-xs : round($b-fs-xs * 2);
+$bubble-size-s  : round($b-fs-s  * 2);
+$bubble-size-m  : round($b-fs-m  * 2);
+$bubble-size-l  : round($b-fs-l  * 2);
+$bubble-size-xl : round($b-fs-xl * 2);
+
+// ----- Caret ----- //
+
+$caret-size-xs : round($b-fs-xs * .4);
+$caret-size-s  : round($b-fs-s  * .4);
+$caret-size-m  : round($b-fs-m  * .4);
+$caret-size-l  : round($b-fs-l  * .4);
+$caret-size-xl : round($b-fs-xl * .4);
+
+$caret-offset-inside : 3px;
+
+$caret-offset-xs     : round(($b-fs-xs - $caret-size-xs) / 2);
+$caret-offset-s      : round(($b-fs-s  - $caret-size-s ) / 2);
+$caret-offset-m      : round(($b-fs-m  - $caret-size-m ) / 2);
+$caret-offset-l      : round(($b-fs-l  - $caret-size-l ) / 2);
+$caret-offset-xl     : round(($b-fs-xl - $caret-size-xl) / 2);
+
+// ----- Tooltip ----- //
+
+$tooltip-caret-width : $caret-size-s;
+$tooltip-bd-offset   : round($b-fs-s  * .6) * -2;
+
+// ----- Dot ----- //
+
+$dot-size-xs : round($b-fs-xs * .8);
+$dot-size-s  : round($b-fs-s  * .8);
+$dot-size-m  : round($b-fs-m  * .8);
+$dot-size-l  : round($b-fs-l  * .8);
+$dot-size-xl : round($b-fs-xl * .8);
+
+// ----- Section ----- //
+
+$section-gap : 50px;
+
+// ----- Grid ----- //
+
+// Breakpoints
+
+// 是否开启flex
+$enable-flex: true;
+
+$enable-flex: false !default;
+
+// 是否开启 Media queries
+$enable-flex: false !default;
+
+// 网格断点
+$grid-breakpoints: (
+        xs: 0,
+        s: 34em,
+        m: 48em,
+        l: 62em,
+        xl: 75em
+) !default;
+
+
+// 网格容器断点s
+$container-max-widths: (
+        s: 480px,    // 34rem
+        m: 720px,    // 45rem
+        l: 960px,    // 60rem
+        xl:1140px   // 72.25rem
+) !default;
+
+// Settings
+$grid-columns:               12 !default;
+$grid-gutter-width:          30px !default; // 1.875rem
+
+// Selector
+
+// -------------------------------------
+//   Structures
+// -------------------------------------
+
+// ...

@@ -1,0 +1,114 @@
+// *************************************
+//
+//   Base
+//   -> Tag-level settings
+//
+// *************************************
+
+html {
+    background  : $c-bg-white;
+    color       : $c-text;
+    font-family : $b-fontFamily;
+    font-size   : $b-fontSize;
+    line-height : $b-lineHeight;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-size : 100%;
+}
+
+
+[data-state~='hidden'] {
+    visibility : hidden;
+}
+
+// -------------------------------------
+//   Block Content
+// -------------------------------------
+ul,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+dd {
+    margin-left :0;
+}
+
+// ----- Headings ----- //
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+    font-family: $b-fontFamily-heading;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+h1,
+.h1 {
+    font-size: $b-fontSize-h1;
+}
+
+h2,
+.h2 {
+    font-size: $b-fontSize-h2;
+}
+
+h3,
+.h3 {
+    font-size: $b-fontSize-h3;
+}
+
+h4,
+.h4 {
+    font-size: $b-fontSize-h4;
+}
+
+// -------------------------------------
+//   Inline Content
+// -------------------------------------
+
+// ----- Links ----- //
+
+a {
+    color           : $c-highlight;
+    text-decoration : none;
+    &:hover,
+    &:focus {
+        border-bottom-color : $c-highlight;
+        color               : $c-subdue;
+    }
+}
+
+// ----- Images ----- //
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+// ----- Form ----- //
+input,
+button,
+select,
+optgroup,
+textarea {
+    font-size   : inherit;
+    font-family : inherit;
+    margin      : 0;
+    line-height : $b-lh;
+}
+
+label{
+    vertical-align: middle;
+}

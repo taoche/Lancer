@@ -1,0 +1,24 @@
+{
+  "name": "left 2.0",
+  "version": "0.0.1",
+  "authors": [
+    "Wei Tao <taoche2010@gmail.com>"
+  ],
+  "description": "xiaoman.cn ui core life 2.0",
+  "keywords": [
+    "xiaoman",
+    "ui"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "kss-node-template": "https://github.com/htanjo/kss-node-template.git#~0.1.5"
+  }
+}

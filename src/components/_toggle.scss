@@ -1,0 +1,132 @@
+// *************************************
+//
+//   Switches
+//   -> components toggle
+//
+// *************************************
+
+// toggle
+//
+// State:
+//
+// + `active`
+// + `disabled`
+//
+// Markup:
+// <div class="md-toggle">
+//   <input class="toggle-tag" type="checkbox" id="tg-demo">
+//   <div class="toggle-bd">
+//     <span class="toggle-indicator"></span>
+//   </div>
+// </div>
+// <div class="toggle" data-state="active">
+//   <input class="toggle-tag" type="checkbox" id="tg-demo">
+//   <div class="toggle-bd">
+//     <span class="toggle-indicator"></span>
+//   </div>
+// </div>
+// <div class="toggle" data-state="disabled">
+//   <input class="toggle-tag" type="checkbox" id="tg-demo">
+//   <div class="toggle-bd">
+//     <span class="toggle-indicator"></span>
+//   </div>
+// </div>
+// <label class="label" for="tg-demo">开关</label>
+//
+// Styleguide 2.5
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.md-toggle {
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+.md-toggle[data-state~='active'] {
+    .toggle-bd {
+        border-width: $b-bd-width;
+        border-style: $b-bd-style;
+        background-color: lighten($c-primary,10%);
+        background-image: none;
+
+        @extend .ui-primary;
+    }
+    .toggle-indicator {
+        transform: translateX(35%);
+
+        background-color: $c-primary;
+    }
+}
+
+.md-toggle[data-state~='disabled'] {
+    .toggle-bd {
+        cursor: not-allowed;
+
+        background-color: rgba(0, 0, 0, .12);
+    }
+    .toggle-indicator {
+        background-color: #bdbdbd;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, .12), 0 1px 4px rgba(0, 0, 0, .24);
+    }
+}
+
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ---- Tag ----- //
+.toggle-tag {
+    position: absolute;
+
+    opacity: 0;
+    outline: 0;
+}
+
+// ---- Body ----- //
+
+.toggle-bd {
+    position: relative;
+
+    display: block;
+
+    width: floor($b-fs-l * 2.7);
+    height: floor($b-fs-l * 1.1);
+
+    border-width: $b-bd-width;
+    border-style: none;
+    border-radius: $b-rad-pill;
+    background-color: rgba(0, 0, 0, .258824);
+}
+
+
+// ---- Tip ----- //
+
+.toggle-indicator {
+    display: block;
+
+    width: floor($b-fs-l * 1.6);
+    height: floor($b-fs-l * 1.6);
+
+    transition: transform .3s ease;
+    transform: translateX(-35%);
+
+    border-radius: $b-rad-circle;
+    background-color: rgb(250, 250, 250);
+    box-shadow: rgba(0, 0, 0, .11) 0 1px 6px, rgba(0, 0, 0, .24) 0 1px 4px;
+
+    @extend .center;
+}

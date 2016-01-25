@@ -1,0 +1,16 @@
+{
+    "debug"   : false,
+    "version" : "0.0.1",
+    "title"    :"小满 life 2.0",
+    "dirs": {
+        "build"      : "build/",
+        "test"       : "test/",
+        "node"       : "node_modules/",
+        "bower"      : "bower_components/",
+        "tasks"      : "tasks/",
+        "assets"     : "assets/",
+        "styles"     : "src/",
+        "styleguide" : "docs/styleguide/",
+        "kssTpl"     : "bower_components/kss-node-template/template/"
+    }
+}

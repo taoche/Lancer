@@ -1,0 +1,490 @@
+// *************************************
+//
+//   Helpers
+//   -> Functions, Mixins, Extends, Animations
+//
+// *************************************
+
+// -------------------------------------
+//   Functions
+// -------------------------------------
+
+// Functions
+//
+// Styleguide 1.1
+
+// ----- Em ----- //
+
+// Em
+//
+// px单位转换为em单位.
+//
+// `em($target, $context: $b-fontSize)`
+//
+// + `$target` `px的值`
+// + `$context` `上下文字体大小(默认字体大小)`.
+//
+// Styleguide 1.1.1
+
+@function em($target, $context: $b-fontSize) {
+    @if $target==0 {
+        @return 0;
+    }
+    @else {
+        @return $target / $context * 1em;
+    }
+}
+
+// -------------------------------------
+//   Mixins
+// -------------------------------------
+
+// Mixins
+//
+// Styleguide 1.2
+
+
+// ----- Font Face ----- //
+
+// Font Face
+//
+// 设置字体族
+//
+// `mix-font-face($family, $path, $weight: normal, $style: normal, $asset-pipeline: true)`
+//
+// + `$family` `字体名称`
+// + `$path`   `文件路径`
+// + `$weight` `字体粗细`
+// + `$style`  `字体样式`
+//
+// Styleguide 1.2.1
+
+@mixin mix-font-face($family, $path, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: $family;
+        font-weight: $weight;
+        font-style: $style;
+
+        src: url('#{$path}.eot');
+        src: url('#{$path}.eot?#iefix') format('embedded-opentype'),
+        url('#{$path}.woff') format('woff'),
+        url('#{$path}.ttf') format('truetype'),
+        url('#{$path}.svg##{$family}') format('svg');
+    }
+}
+
+// ----- Triangle ----- //
+
+// Triangle
+//
+// 三角形符号
+//
+// `mix-triangle($direction, $size, $borderColor )`
+//
+// + `$direction`     `方向`
+// + `$size`          `大小`
+// + `$borderColor`   `边框颜色`
+//
+// Styleguide 1.2.2
+
+@mixin mix-triangle($direction, $size, $borderColor) {
+    overflow: hidden;
+
+    width: 0;
+    height: 0;
+
+    content: '';
+    @if $direction==top {
+        border-right: $size dashed transparent;
+        border-bottom: $size solid $borderColor;
+        border-left: $size dashed transparent;
+    }
+    @else if $direction==right {
+        border-top: $size dashed transparent;
+        border-bottom: $size dashed transparent;
+        border-left: $size solid $borderColor;
+    }
+    @else if $direction==bottom {
+        border-top: $size solid $borderColor;
+        border-right: $size dashed transparent;
+        border-left: $size dashed transparent;
+    }
+    @else if $direction==left {
+        border-top: $size dashed transparent;
+        border-right: $size solid $borderColor;
+        border-bottom: $size dashed transparent;
+    }
+}
+
+
+// ----- Disabled ----- //
+
+// Disabled
+//
+// 禁用样式
+//
+// `mix-disabled($bgColor,$textColor)`
+//
+// + `$bgColor`  (#e6e6e6)     `背景颜色`
+// + `$textColor`  (#ababab)   `文字颜色`
+//
+// Styleguide 1.2.3
+
+@mixin mix-disabled($bgColor: #e6e6e6, $textColor:#ababab) {
+    cursor: not-allowed !important;
+
+    color: $textColor !important;
+    background-color: $bgColor !important;
+}
+
+// ----- Retina images ----- //
+
+// Retina images
+//
+// 针对Retina 屏幕的图片适配
+//
+// `mix-image-2x($url, $width, $height)`
+//
+// + `$url`     `图片链接`
+// + `$width`   `宽度`
+// + `$height`  `高度`
+//
+// Styleguide 1.2.4
+
+@mixin mix-image-2x($url, $width, $height) {
+    @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6/2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        background-image: url('#{$url}');
+        background-size: $width $height;
+    }
+}
+
+// ----- Vgradient ----- //
+
+// mix-vgradient
+//
+// Vertical two color stop gradient.
+// If one of color stop not given gradient will be override into empty.
+//
+// `mix-vgradient($start, $end)`
+//
+// + `$start` `rgba` Start color stop.
+// + `$end` `rgba` End color stop.
+//
+// Styleguide 1.2.5
+
+@mixin mix-vgradient($start, $end) {
+    @if $start and $end {
+        background-image: linear-gradient($start, $end);
+    }
+    @else {
+        background-image: none;
+    }
+}
+
+// ----- inner-shadow ----- //
+
+// mix-inner-shadow
+//
+// Vertical component inner shadow.
+//
+// `mix-vinner-shadow($deep, $length, $color)`
+//
+// + `$deep` `unit`(2) Shadow deep.
+// + `$length` `unit`(4) Length of shadow spread.
+// + `$color` `rgba`(`$c-shadow-light`) Shadow color.
+//
+// Styleguide 1.2.5
+
+@mixin mix-inner-shadow($deep: 2px, $length: 4px, $color:$c-shadow-light) {
+    box-shadow: inset 0 $deep $length $color;
+}
+
+
+// ----- focus shadow ----- //
+
+// mix-focus-shadow
+//
+// Styleguide 1.2.6
+
+@mixin mix-focus-shadow() {
+    box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
+}
+
+
+// ----- shadow ----- //
+
+// mix-shadow-Ndp
+//
+// `{* | * ∈ 2dp, 3dp, 4dp, 6dp, 8dp, 16dp}`
+//
+//
+// Styleguide 1.2.7
+
+@mixin mix-shadow-2dp() {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $c-so-key-penumbra),
+    0 3px 1px -2px rgba(0, 0, 0, $c-so-key-umbra),
+    0 1px 5px 0 rgba(0, 0, 0, $c-so-ambient-shadow);
+}
+
+@mixin mix-shadow-3dp() {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $c-so-key-penumbra),
+    0 3px 3px -2px rgba(0, 0, 0, $c-so-key-umbra),
+    0 1px 8px 0 rgba(0, 0, 0, $c-so-ambient-shadow);
+}
+
+@mixin mix-shadow-4dp() {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $c-so-key-penumbra),
+    0 1px 10px 0 rgba(0, 0, 0, $c-so-ambient-shadow),
+    0 2px 4px -1px rgba(0, 0, 0, $c-so-key-umbra);
+}
+
+@mixin mix-shadow-6dp() {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, $c-so-key-penumbra),
+    0 1px 18px 0 rgba(0, 0, 0, $c-so-ambient-shadow),
+    0 3px 5px -1px rgba(0, 0, 0, $c-so-key-umbra);
+}
+
+@mixin mix-shadow-8dp() {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, $c-so-key-penumbra),
+    0 3px 14px 2px rgba(0, 0, 0, $c-so-ambient-shadow),
+    0 5px 5px -3px rgba(0, 0, 0, $c-so-key-umbra);
+}
+
+@mixin mix-shadow-16dp() {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, $c-so-key-penumbra),
+    0  6px 30px 5px rgba(0, 0, 0, $c-so-ambient-shadow),
+    0  8px 10px -5px rgba(0, 0, 0, $c-so-key-umbra);
+}
+
+
+// mix-outer-glow
+//
+// `mix-outer-glow($color, $length)`
+//
+// + `$color` `rgba`
+// + `$length` `unit`(4) Glow spread length.
+//
+// Styleguide 1.2.2
+
+@mixin mix-outer-glow($color, $length: 4) {
+    box-shadow: 0 0 $length+px $color;
+}
+
+// -------------------------------------
+//   Extends
+// -------------------------------------
+
+// Extends
+//
+// Styleguide 1.3
+
+// ----- Clearfix ----- //
+.group::after {
+    display: table;
+    clear: both;
+
+    content: '';
+}
+
+// ----- Debug ----- //
+
+// Debug
+//
+// Debug 颜色样式
+//
+// + `.debug`
+//
+// Styleguide 1.3.1
+
+.debug {
+    background-color: pink !important;
+}
+
+// ----- Ellipsis ----- //
+
+// Ellipsis
+//
+// 文字溢出截取
+//
+// + `.ellipsis`
+//
+// Styleguide 1.3.2
+
+.ellipsis {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// ----- Image Replacement ----- //
+
+// Image Replacement
+//
+//  图片替换
+//
+// + `.ir`
+//
+// Styleguide 1.3.3
+
+.ir {
+    overflow: hidden;
+
+    border: 0;
+    background-color: transparent;
+    &::before {
+        display: block;
+
+        width: 0;
+        height: 150%;
+
+        content: '';
+    }
+}
+
+// ----- Typeset ----- //
+
+// nowrap
+//
+// Long string would not wrap.
+//
+// Styleguide 1.3.4
+
+.nowrap {
+    white-space: nowrap;
+}
+
+// -------------------------------------
+//   Templates
+// -------------------------------------
+
+// Templates
+//
+// Styleguide 1.4
+
+// ----- Reset-gap ----- //
+
+// Reset-gap
+//
+// Remove default margin & padding.
+//
+// + `%reset-gap`
+//
+// Styleguide 1.4.1
+
+%reset-gap {
+    margin: 0;
+    padding: 0;
+}
+
+// ----- Reset-list ----- //
+
+// Reset-list
+//
+// 重置列表的默认样式.
+//
+// + `%reset-list`
+//
+// Styleguide 1.4.2
+
+%reset-list {
+    list-style-type: none;
+}
+
+// ----- Reset-appearance ----- //
+
+// Reset-appearance
+//
+// 设置  `-webkit-appearance: none`
+//
+// + `%reset-appearance`
+//
+// Styleguide 1.4.3
+
+%reset-appearance {
+    -webkit-appearance: none;
+}
+
+
+// -------------------------------------
+//   User Interface
+// -------------------------------------
+
+// User Interface
+//
+// Styleguide 1.6
+
+
+// ----- Center ----- //
+
+// Center
+//
+// Position component according to parent container.
+//
+// `center-*`
+//
+// `{* | * ∈ top, right, bottom, left, top-left, top-right, bottom-left, bottom-right}`
+//
+// Styleguide 1.6.1
+
+.center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+
+.center-top {
+    bottom: auto;
+
+    @extend .center;
+}
+
+.center-right {
+    left: auto;
+
+    @extend .center;
+}
+
+.center-bottom {
+    top: auto;
+
+    @extend .center;
+}
+
+.center-left {
+    right: auto;
+
+    @extend .center;
+}
+
+.center-top-left {
+    right: auto;
+    bottom: auto;
+
+    @extend .center;
+}
+
+.center-bottom-left {
+    top: auto;
+    right: auto;
+
+    @extend .center;
+}
+
+.center-top-right {
+    bottom: auto;
+    left: auto;
+
+    @extend .center;
+}
+
+.center-bottom-right {
+    top: auto;
+    left: auto;
+
+    @extend .center;
+}

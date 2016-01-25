@@ -1,0 +1,52 @@
+// *************************************
+//
+//   Badges
+//   -> components Badges
+//
+// *************************************
+
+
+// Badges
+//
+// Markup:
+//<span class="badge">account_box</span>
+//
+// Styleguide 2.7
+
+.badge {
+    position: relative;
+}
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Tip ----- //
+
+.badge {
+    &:after {
+        display: block;
+
+        width: 20px;
+        height: 20px;
+
+        content: '';
+
+        border-radius: 50%;
+        background-color: $c-accent;
+
+        @extend .center-top-right;
+
+        top: -10px;
+        right: -10px
+    }
+}

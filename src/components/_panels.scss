@@ -1,0 +1,46 @@
+// *************************************
+//
+//   Panels
+//   -> components Panels
+//
+// *************************************
+
+// Panels
+//
+// Markup:
+// <div class="panel">
+//   <!-- content -->
+// </div>
+//
+// Styleguide 2.8
+
+.panel {
+    margin-bottom: 20px;
+    border-radius: 0;
+    background-color: #FFF;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.mui-panel:before,
+.mui-panel:after {
+    content: " ";
+    display: table;
+}
+
+.mui-panel:after {
+    clear: both;
+}
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+// -------------------------------------
+//   States
+// -------------------------------------
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------

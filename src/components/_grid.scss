@@ -1,0 +1,336 @@
+// *************************************
+//
+//   Grid System
+//   -> 网格系统 Gird System
+//
+// *************************************
+
+
+
+// -------------------------------------
+//   setup
+// -------------------------------------
+
+// ----- Mixin Function ----- //
+
+@import "mixins/grid";
+
+
+
+
+
+// -------------------------------------
+//   body
+// -------------------------------------
+
+
+// Grid System
+//
+// + 一共有三个主要的组件—containers, rows, and columns。
+// + Containers 中的 .container 设置的宽度或者 .container-fluid 全尺寸会将你的页面的内容居中并且帮助调整你的网络的内容。
+// + Rows 是 columns 的横向组合这个确保你的 columns 被很好地排列。
+// + 内容必须放置在 columns 中, 并且只有 columns 可以是 rows 的直接子 row。
+// + Column 类表明你想要在每一排应用的 12 个 columns 之外的数量。所以如果你想要三个等宽的 columns, 你应当使用 .col-s-4。
+// + Column 的 widths 是通过百分比设置的, 因此他们经常和他们的父元素具有相似的特点。
+// + Columns 具有水平的 padding 来在独立的 columns 之间建立约束。
+// + 一共有五个网格层, 每一个 自适应视图 都有一个: 特别小, 小, 中等, 大,和特别大。
+// + 网络层都基于最小的宽度, 也就是意味着他们应用到一层以及这层之上的所有 (例如, .col-s-4 应用到 小, 中等, 大,和特别大的设备)。
+// + 对于更多的语意上标记的你可以使用预先定义好的网格类和 Sass mixins。
+//
+// Styleguide 2.1
+
+
+// 网格容器
+//
+// 将布局元素设置`.grid`成为网格容器
+//
+//<style>
+//    .grid,.grid--fluid,.row, .row div{ box-sizing:border-box;}
+//    .grid,.grid--fluid,.row{ border:1px solid #666; }
+//    .row  div{ background:#ccc; border:1px solid; }
+//</style>
+//
+// Markup:
+// <div class='grid'>容器</div>
+//
+// Styleguide 2.1.1
+
+// ----- grid ----- //
+
+.grid {
+    @include make-container();
+
+    // 对于每一个断点, 在媒体查询定义容器的最大宽度
+    @each $breakpoint, $container-max-width in $container-max-widths {
+        @include media-breakpoint-up($breakpoint) {
+            max-width: $container-max-width;
+        }
+    }
+}
+
+
+// 流式布局容器
+//
+// 将最外面的布局元素 `.grid` 修改为 `.grid--fluid`，就可以将固定宽度的网格布局转换为 `100%` 宽度的布局
+//
+// Markup:
+// <div class="grid--fluid">
+//     流式布局容器
+// </div>
+//
+// Styleguide 2.1.2
+
+
+// ----- grid fluid ----- //
+
+.grid--fluid {
+    @include make-container();
+}
+
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// Rows
+//
+// 将布局元素设置`.row`成为行容器。
+//
+// Markup:
+// <div class='row'>定义行</div>
+//
+// Styleguide 2.1.3
+
+// ----- 行 ----- //
+
+.row {
+    @include make-row();
+}
+
+
+// Columns
+//
+// 常见样式的大小网格列。
+//
+//<table class="table" border="1" style="width:100%;">
+//    <thead>
+//        <tr>
+//            <th></th>
+//            <th>
+//                极小的<small>&lt;34em / 480px</small>
+//            </th>
+//            <th>
+//                小型的<small>≥34em / 480px</small>
+//            </th>
+//            <th>
+//                中等的<small>≥45em / 720px</small>
+//            </th>
+//            <th>
+//                L大型的<small>≥62em / 992px</small>
+//            </th>
+//            <th>
+//                极大的<small>≥75em / 1200px</small>
+//            </th>
+//        </tr>
+//    </thead>
+//    <tbody>
+//        <tr>
+//            <th>网格行为</th>
+//            <td>一直处于水平方向</td>
+//            <td colspan="4">开始瓦解，在断点之上保持水平。</td>
+//        </tr>
+//        <tr>
+//            <th>容器的宽度</th>
+//            <td>无 (自动)</td>
+//            <td>34rem / 480px</td>
+//            <td>45rem / 720px</td>
+//            <td>60rem / 960px</td>
+//            <td>72.25rem / 1156px</td>
+//        </tr>
+//        <tr>
+//            <th>类前缀</th>
+//            <td><code>.col--xs--</code></td>
+//            <td><code>.col--s--</code></td>
+//            <td><code>.col--m--</code></td>
+//            <td><code>.col--l--</code></td>
+//            <td><code>.col--xl--</code></td>
+//        </tr>
+//        <tr><th># 列</th><td colspan="5">12</td></tr>
+//        <tr><th>列间隙宽度</th><td colspan="5">30px (每一列两侧都有15px)</td></tr>
+//        <tr><th>可嵌套性</th><td colspan="5">是</td></tr>
+//        <tr><th>可偏移</th><td colspan="5">是</td></tr>
+//        <tr><th>列排序</th><td colspan="5">是</td></tr>
+//    </tbody>
+//</table>
+//<br />
+//
+// Markup:
+//<div class="grid">
+//    <div class="row">
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//        <div class="col--m--1">.col--m--1</div>
+//    </div>
+//    <div class="row">
+//        <div class="col--m--8">.col--m--8</div>
+//        <div class="col--m--4">.col--m--4</div>
+//    </div>
+//    <div class="row">
+//        <div class="col--m--4">.col--m--4</div>
+//        <div class="col--m--4">.col--m--4</div>
+//        <div class="col--m--4">.col--m--4</div>
+//    </div>
+//    <div class="row">
+//        <div class="col--m--6">.col--m--6</div>
+//        <div class="col--m--6">.col--m--6</div>
+//    </div>
+//    <div class="row">
+//        <div class="col--xs--12 col--m--8">.col--xs--12 .col--m--8</div>
+//        <div class="col--xs--6 col--m--4">.col--xs--6 .col--m--4</div>
+//    </div>
+//    <div class="row">
+//        <div class="col--xs--6 col--m--4">.col--xs--6 .col--m--4</div>
+//        <div class="col--xs--6 col--m--4">.col--xs--6 .col--m--4</div>
+//        <div class="col--xs--6 col--m--4">.col--xs--6 .col--m--4</div>
+//    </div>
+//    <div class="row">
+//        <div class="col--xs--6">.col--xs--6</div>
+//        <div class="col--xs--6">.col--xs--6</div>
+//    </div>
+//</div>
+//
+// Styleguide 2.1.4
+
+
+
+// Column 偏移
+//
+// 将 columns 移动到右边使用 `.col--m--offset--*` 类. 这些类增加了column 的左面的边缘通过 * columns。
+// 举例来说, `.col--m--offset--4` 移动 `.col--m--4` 四个columns.
+//
+// Markup:
+//<div class="grid">
+//    <div class="row">
+//        <div class="col--m--4">.col--m--4</div>
+//        <div class="col--m--4 col--m--offset--4">.col--m--4 .col--m--offset--4</div>
+//    </div>
+//    <div class="row">
+//        <div class="col--m--3 col--m--offset--3">.col--m--3 .col--m--offset--3</div>
+//        <div class="col--m--3 col--m--offset--3">.col--m--3 .col--m--offset--3</div>
+//    </div>
+//    <div class="row">
+//        <div class="col--m--6 col--m--offset--3">.col--m--6 .col--m--offset--3</div>
+//    </div>
+//</div>
+//
+// Styleguide 2.1.5
+
+
+// Column 排序
+//
+// 使用 `.col--*--push--*` 和 `.col--*--pull--*` 修正类可以轻松地改变我们的内建的网格 columns 的顺序。
+//
+// Markup:
+//<div class="row">
+//    <div class="col--m--9 col--m--push--3">.col--m--9 .col--m--push--3</div>
+//    <div class="col--m--3 col--m--pull--9">.col--m--3 .col--m--pull--9</div>
+//</div>
+//
+// Styleguide 2.1.5
+
+
+
+
+
+// ----- 列 ----- //
+
+@include make-grid-columns();
+
+
+
+// -------------------------------------
+//   Grid flex对齐方式
+// -------------------------------------
+
+// Grid flex对齐方式
+//
+// ####列的排序方式####
+// + `.col--*--first`       - Column 排在 Row 头部。
+// + `.col--*--last`        - Column 排在 Row 尾部。
+//
+// ####行的对齐方式####
+// + `.row--*--top`         - Row 内 Columns 紧靠住其起始边界。
+// + `.row--*--center`      - Row 内 Columns 上居中放置。
+// + `.row--*--bottom`      - Row 内 Columns 紧靠住其结束边界。
+//
+// ####列的对齐方式####
+// + `.col--*--top`         - Column 紧靠住 Row 起始边界。
+// + `.col--*--center`      - Column 在 Row 上居中放置。
+// + `.col--*--bottom`      - Column 紧靠住 Row 结束边界。
+//
+//
+//
+//
+//
+// Markup:
+// 列的排序方式：Column 排在 Row 头部。
+//<div class="grid">
+//    <div class="row">
+//        <div class="col--m--3">11111111</div>
+//        <div class="col--m--3 col--m--first">22222222</div>
+//        <div class="col--m--3">33333333</div>
+//    </div>
+//</div>
+// 行的对齐方式：Row 内 Columns 上居中放置。
+//<div class="grid">
+//    <div class="row row--m--center">
+//        <div class="col--m--3">11111111</div>
+//        <div class="col--m--3">22222222 <br /><br /><br /><br /><br /></div>
+//        <div class="col--m--3">33333333</div>
+//    </div>
+//</div>
+// 列的对齐方式：Column 紧靠住 Row 结束边界。
+//<div class="grid">
+//    <div class="row">
+//        <div class="col--m--4">.col--m--4 <br/><br/><br/><br/><br/><br/></div>
+//        <div class="col--m--4 col--m--bottom" >Column 紧靠住 Row 结束边界</div>
+//    </div>
+//</div>
+//
+// Styleguide 2.1.5
+
+@if $enable-flex {
+
+    @each $breakpoint in map-keys($grid-breakpoints){
+
+        @include media-breakpoint-up($breakpoint) {
+
+
+            // ----- 列排序方式 ----- //
+            .col--#{$breakpoint}--first { order: -1; }
+            .col--#{$breakpoint}--last { order: 1; }
+
+
+            // ----- 行对齐方式 ----- //
+            .row--#{$breakpoint}--top    { align-items: flex-start; }
+            .row--#{$breakpoint}--center { align-items: center; }
+            .row--#{$breakpoint}--bottom { align-items: flex-end; }
+
+
+            // ----- 列对齐方式 ----- //
+            .col--#{$breakpoint}--top    { align-self: flex-start; }
+            .col--#{$breakpoint}--center { align-self: center; }
+            .col--#{$breakpoint}--bottom { align-self: flex-end; }
+        }
+    }
+}
+

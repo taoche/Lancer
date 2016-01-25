@@ -1,0 +1,161 @@
+// *************************************
+//
+//   Switches
+//   -> components checkbox
+//
+// *************************************
+
+// checkbox
+//
+// State:
+//
+// + `active`
+// + `disabled`
+//
+// Markup:
+// <div class="checkbox">
+//   <input class="checkbox-tag" type="checkbox" id="cb-demo">
+//   <div class="checkbox-bd">
+//     <span class="checkbox-indicator"></span>
+//   </div>
+// </div>
+// <div class="checkbox" data-state="active">
+//   <input class="checkbox-tag" type="checkbox" id="cb-demo">
+//   <div class="checkbox-bd">
+//     <span class="checkbox-indicator"></span>
+//   </div>
+// </div>
+// <div class="checkbox" data-state="disabled">
+//   <input class="checkbox-tag" type="checkbox" id="cb-demo">
+//   <div class="checkbox-bd">
+//     <span class="checkbox-indicator"></span>
+//   </div>
+// </div>
+// <label class="label" for="cb-demo">多选控件</label>
+//
+// Styleguide 2.3
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.checkbox {
+    position: relative;
+
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+.checkbox {
+    .checkbox-bd {
+        cursor: pointer;
+
+        border-radius: $b-rad-round;
+    }
+
+    .checkbox-indicator {
+        top: -4px;
+        width: 12px;
+
+        height: $b-fs-half - 1;
+
+        transform: rotate(-45deg);
+
+        border-width: 2px;
+        border-style: none none solid solid;
+        border-color: $c-primary;
+    }
+}
+
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+.checkbox.active {
+    .checkbox-bd {
+        border-color: $c-primary;
+        background-color: $c-primary;
+    }
+    .checkbox-indicator {
+        animation: checkbox-bounceIn .6s .1s ease both;
+
+        opacity: 1;
+        border-color: $c-white;
+
+        @extend .fadeIn;
+    }
+}
+
+.checkbox.disabled {
+    .checkbox-bd {
+        cursor: not-allowed;
+
+        border-color: rgba(0,0,0,.3);
+    }
+}
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ---- Tag ----- //
+.checkbox-tag {
+    position: absolute;
+
+    opacity: 0;
+    outline: 0;
+}
+
+// ---- Body ----- //
+
+.checkbox-bd {
+    position: relative;
+
+    display: block;
+
+    width: 14px;
+    height: 14px;
+
+    border-width: $b-bd-width + 1;
+    border-style: $b-bd-style;
+    border-color: rgba(0,0,0,.54);
+    @extend .ui-basis;
+}
+
+// ---- Tip ----- //
+
+.checkbox-indicator {
+    display: block;
+
+    opacity: 0;
+
+    @extend .center;
+}
+
+// ---- Animations ----- //
+
+@-webkit-keyframes checkbox-bounceIn {
+    0% {
+        -webkit-transform: rotate(-45deg) scale(.3);
+
+        opacity: 0;
+    }
+    50% {
+        -webkit-transform: rotate(-45deg) scale(1.05);
+
+        opacity: 1;
+    }
+    70% {
+        -webkit-transform: rotate(-45deg) scale(.9);
+    }
+    100% {
+        -webkit-transform: rotate(-45deg) scale(1);
+    }
+}

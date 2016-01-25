@@ -1,0 +1,103 @@
+// *************************************
+//
+//   Pagination
+//   -> components Pagination
+//
+// *************************************
+
+
+// Pagination
+//
+// Markup:
+// <ul class="pagination">
+//     <li data-state="disabled">
+//         <a href="javascript:void(0)"><i class=""><</i></a>
+//     </li>
+//     <li data-state="active"><a href="javascript:void(0)">1</a></li>
+//     <li><a href="javascript:void(0)">2</a></li>
+//     <li><a href="javascript:void(0)">3</a></li>
+//     <li><a href="javascript:void(0)">4</a></li>
+//     <li><a href="javascript:void(0)">5</a></li>
+//     <li>
+//         <a href="javascript:void(0)"><i class="">></i></a>
+//      </li>
+// </ul>
+//
+// Styleguide 2.10
+
+.pagination {
+
+  li {
+    $size: 30px;
+    width: $size;
+    height: $size;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 3px;
+    line-height: $size;
+    @extend .dib;
+
+    a {
+      color: #000;
+      @extend .db;
+    }
+
+    &.not-page {
+      a {
+        cursor: default;
+      }
+    }
+
+    &:not(.not-page):not(.next):not(.prev):hover {
+
+      position: relative;
+      z-index: 1;
+
+      a{
+        color: #fff;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        animation: dateBackground .3s;
+        position: absolute;
+        background: lighten(#3993e5,3%);
+        width: 30px;
+        height: 30px;
+        transform: translate3d(0, 0, 0);
+        border-radius: 50%;
+        z-index: -1;
+        top: 0;
+      }
+    }
+  }
+}
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+
+// -------------------------------------
+//   States
+// -------------------------------------
+.pagination {
+
+  li.active {
+    background-color: #3993e5;
+    a {
+      color: white;
+    }
+  }
+
+  li.disabled {
+    a {
+      color: rgba(0,0,0,.3);
+    }
+  }
+}
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------

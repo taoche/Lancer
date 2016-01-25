@@ -1,0 +1,132 @@
+// *************************************
+//
+//   Switches
+//   -> components radio
+//
+// *************************************
+
+// radio
+//
+// State:
+//
+// + `active`
+// + `disabled`
+//
+// Markup:
+// <div class="radio">
+//   <input class="radio-tag" type="radio" id="rad-demo">
+//   <div class="radio-bd">
+//     <span class="radio-indicator"></span>
+//   </div>
+// </div>
+// <div class="radio" data-state="active">
+//   <input class="radio-tag" type="radio" id="rad-demo">
+//   <div class="radio-bd">
+//     <span class="radio-indicator"></span>
+//   </div>
+// </div>
+// <div class="radio" data-state="disabled">
+//   <input class="radio-tag" type="radio" id="rad-demo">
+//   <div class="radio-bd">
+//     <span class="radio-indicator"></span>
+//   </div>
+// </div>
+// <label class="label" for="rad-demo">单选控件</label>
+//
+// Styleguide 2.4
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.radio {
+    position: relative;
+
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+.radio {
+    .radio-bd {
+        cursor: pointer;
+
+        border-radius: $b-rad-circle;
+    }
+    .radio-indicator {
+        width: $b-fs-s - 4;
+        height: $b-fs-s - 4;
+
+        border-style: none;
+        border-radius: $b-rad-circle;
+    }
+}
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+.radio.active {
+    .radio-indicator {
+        opacity: 1;
+        background: $c-primary;
+
+        @extend .fadeIn;
+        @extend .bounceIn;
+    }
+    .radio-bd {
+        border-color: $c-primary;
+    }
+}
+
+.radio.disabled {
+    .radio-bd {
+        cursor: not-allowed;
+
+        border-color: rgba(0,0,0,.3);
+    }
+}
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ---- Tag ----- //
+
+.radio-tag {
+    position: absolute;
+
+    opacity: 0;
+    outline: 0;
+}
+
+// ---- Body ----- //
+
+.radio-bd {
+    position: relative;
+
+    display: block;
+
+    width: floor($b-fs-m);
+    height: floor($b-fs-m);
+
+    border-width: $b-bd-width + 1;
+    border-style: $b-bd-style;
+
+    @extend .ui-basis;
+}
+
+// ---- Tip ----- //
+
+.radio-indicator {
+    display: block;
+
+    opacity: 0;
+
+    @extend .center;
+}

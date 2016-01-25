@@ -1,0 +1,245 @@
+// *************************************
+//
+//   Button
+//   -> components Button
+//
+// *************************************
+
+// Button Group
+//
+// Theme:
+//
+// + `.btn--basis`
+// + `.btn--primary`
+// + `.btn--danger`
+// + `.btn--accent`
+//
+// Size:
+//
+// + `.btn--xs`
+// + `.btn--s`
+// + `.btn--m`
+// + `.btn--l`
+// + `.btn--xl`
+//
+// Stylize:
+//
+// + `.btn--text`
+// + `.btn--link`
+// + `.btn--outline`
+//
+// Layout:
+//
+// + `.btn--auto`
+//
+// State:
+//
+// + `:active`
+// + `:disabled`
+// + `disabled`
+//
+// Styleguide 2.2
+
+
+// Button
+//
+// Markup:
+// <button class="btn btn--basis">按钮</button>
+// <button class="btn btn--primary">按钮</button>
+// <button class="btn btn--danger">按钮</button>
+// <button class="btn btn--accent">按钮</button>
+// <button class="btn btn--basis" data-state="disabled">按钮</button>
+// <button class="btn btn--primary" data-state="disabled">按钮</button>
+// <button class="btn btn--danger" data-state="disabled">按钮</button>
+// <button class="btn btn--accent" data-state="disabled">按钮</button>
+//
+// Styleguide 2.2.1
+
+
+
+// Float
+//
+// Markup:
+// <button class="btn btn--basis" data-stylize="fab">+</button>
+// <button class="btn btn--primary" data-stylize="fab">+</button>
+// <button class="btn btn--danger" data-stylize="fab">+</button>
+// <button class="btn btn--accent" data-stylize="fab">+</button>
+// <button class="btn btn--basis" data-stylize="fab" data-state="disabled">+</button>
+// <button class="btn btn--primary" data-stylize="fab" data-state="disabled">+</button>
+// <button class="btn btn--danger" data-stylize="fab" data-state="disabled">+</button>
+// <button class="btn btn--accent" data-stylize="fab" data-state="disabled">+</button>
+//
+// Styleguide 2.2.2
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.btn {
+    font-size: $b-fs-m;
+    line-height: 36px;
+
+    position: relative;
+
+    display: inline-block;
+
+    height: 36px;
+
+    -webkit-user-select: none;
+    transition: all .2s ease-in-out;
+    animation-duration: .0001s;
+    text-align: center;
+    vertical-align: middle;
+
+    border: none;
+    outline: 0;
+    background-color: transparent;
+    background-image: none;
+
+    @extend .pht;
+    @extend .nowrap;
+    @extend %reset-gap;
+    @extend %reset-appearance;
+}
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Theme ----- //
+.btn{
+  &.btn--basis,
+  &.btn--primary,
+  &.btn--danger,
+  &.btn--accent {
+      border-radius: $b-rad-round;
+  }
+
+  &.btn--basis {
+      @extend .ui-basis;
+  }
+
+  &.btn--primary {
+      @extend .ui-primary;
+  }
+
+  &.btn--danger {
+      @extend .ui-danger;
+  }
+
+  &.btn--accent {
+      @extend .ui-accent;
+  }
+}
+
+// ----- Size ----- //
+
+.btn--xs {
+    font-size: $b-fs-s;
+}
+
+.btn--xl {
+    font-size: $b-fs-l;
+}
+
+.btn--xs,
+.btn--s {
+    padding-top: $b-vgap-half;
+    padding-bottom: $b-vgap-half;
+}
+
+.btn--l,
+.btn--xl {
+    padding-top: $b-vgap-double;
+    padding-bottom: $b-vgap-double;
+}
+
+// ----- Stylize ----- //
+
+.btn[data-stylize~='fab'],
+.btn--fab {
+    line-height: 55px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+    @extend .paf;
+}
+
+// ----- Layout ----- //
+
+.btn--auto {
+    width: auto;
+}
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// ----- Active ----- //
+
+.btn:active {
+    &.btn--basis,
+    &.btn--primary,
+    &.btn--danger,
+    &.btn--accent {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+    }
+}
+
+// ----- Hover ----- //
+
+.btn:hover {
+    &.btn--basis,
+    &.btn--primary,
+    &.btn--danger,
+    &.btn--accent {
+        box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 2px rgba(0, 0, 0, .2);
+    }
+    &.btn--primary {
+        background-color: $c-hov-primary;
+    }
+    &.btn--danger {
+        background-color: $c-hov-danger;
+    }
+    &.btn--accent {
+        background-color: $c-hov-accent;
+    }
+}
+
+// ----- Disabled ----- //
+
+.btn:disabled,
+.btn.disabled {
+    &.btn--basis,
+    &.btn--primary,
+    &.btn--danger,
+    &.btn--accent {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    &.btn--basis {
+        background-color: $c-dis-basis;
+    }
+    &.btn--primary {
+        background-color: $c-dis-primary;
+    }
+    &.btn--danger {
+        background-color: $c-dis-danger;
+    }
+    &.btn--accent {
+        background-color: $c-dis-accent;
+    }
+}
+
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Text ----- //
+
+
+
+// ----- Icon ----- //

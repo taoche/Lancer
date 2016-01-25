@@ -1,0 +1,45 @@
+// *************************************
+//
+//   Utils
+//   -> 这个还未考虑清楚 归属哪一部分  暂且归于 utils
+//
+// *************************************
+
+// Utils
+//
+// Styleguide 1.5
+
+
+// ----- User Interface ----- //
+
+// User Interface
+//
+// `ui-*`
+//
+// `{* | * ∈ black, white, basis, primary, safe, danger, accent}`
+//
+// Styleguide 1.5.1
+
+.ui-black,
+.ui-primary,
+.ui-danger,
+.ui-accent {
+    color: $c-white;
+}
+
+.ui-basis {
+    color: $c-black;
+    background-color: $c-white;
+}
+
+.ui-primary {
+    background-color: $c-bg-primary;
+}
+
+.ui-danger {
+    background-color: $c-bg-danger;
+}
+
+.ui-accent {
+    background-color: $c-bg-accent;
+}

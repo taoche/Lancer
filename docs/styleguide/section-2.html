@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>小满 life 2.0</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="kss-node" />
+    <link rel="stylesheet" href="public/kss.css" />
+    <link rel="stylesheet" href="application.css" />
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <div class="kss-wrapper">
+      <div class="kss-sidebar">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <h1 class="kss-doc-title"><a href="./">小满 life 2.0</a></h1>
+          </header>
+          <nav class="kss-nav">
+            <ul class="kss-menu" data-kss-ref="2">
+              <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">Foundation</span></a></li>
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">Components</span></a></li>
+              <li class="kss-menu-item"><a href="section-3.html"><span class="kss-ref">3</span><span class="kss-name">Structures</span></a></li>
+              <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">Vender</span></a></li>
+              <li class="kss-menu-item"><a href="section-5.html"><span class="kss-ref">5</span><span class="kss-name">Tools</span></a></li>
+              <li class="kss-menu-item"><a href="section-6.html"><span class="kss-ref">6</span><span class="kss-name">Inbox</span></a></li>
+            </ul>
+            <ul class="kss-menu-child">
+              <li class="kss-menu-item"><a href="#section-2.1"><span class="kss-ref">2.1</span><span class="kss-name">Grid System</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.1.1"><span class="kss-ref">2.1.1</span><span class="kss-name">网格容器</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.1.2"><span class="kss-ref">2.1.2</span><span class="kss-name">流式布局容器</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.1.3"><span class="kss-ref">2.1.3</span><span class="kss-name">Rows</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.1.4"><span class="kss-ref">2.1.4</span><span class="kss-name">Columns</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.1.5"><span class="kss-ref">2.1.5</span><span class="kss-name">Column 排序</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.1.5"><span class="kss-ref">2.1.5</span><span class="kss-name">Grid flex对齐方式</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.1.5"><span class="kss-ref">2.1.5</span><span class="kss-name">Column 偏移</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.2"><span class="kss-ref">2.2</span><span class="kss-name">Button Group</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.2.1"><span class="kss-ref">2.2.1</span><span class="kss-name">Button</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.2.2"><span class="kss-ref">2.2.2</span><span class="kss-name">Float</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.3"><span class="kss-ref">2.3</span><span class="kss-name">checkbox</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.4"><span class="kss-ref">2.4</span><span class="kss-name">radio</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.5"><span class="kss-ref">2.5</span><span class="kss-name">toggle</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.6"><span class="kss-ref">2.6</span><span class="kss-name">*************************************</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.7"><span class="kss-ref">2.7</span><span class="kss-name">Badges</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.8"><span class="kss-ref">2.8</span><span class="kss-name">Panels</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.9"><span class="kss-ref">2.9</span><span class="kss-name">Drop Down Menu</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.10"><span class="kss-ref">2.10</span><span class="kss-name">Pagination</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.12"><span class="kss-ref">2.12</span><span class="kss-name">list</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="kss-content">
+        <article class="kss-article">
+          <section id="section-2" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">2</span> Components</h1>
+          </section>
+          <section id="section-2.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.1</span> Grid System</h1>
+            <div class="kss-description">
+              <ul>
+<li>一共有三个主要的组件—containers, rows, and columns。</li>
+<li>Containers 中的 .container 设置的宽度或者 .container-fluid 全尺寸会将你的页面的内容居中并且帮助调整你的网络的内容。</li>
+<li>Rows 是 columns 的横向组合这个确保你的 columns 被很好地排列。</li>
+<li>内容必须放置在 columns 中, 并且只有 columns 可以是 rows 的直接子 row。</li>
+<li>Column 类表明你想要在每一排应用的 12 个 columns 之外的数量。所以如果你想要三个等宽的 columns, 你应当使用 .col-s-4。</li>
+<li>Column 的 widths 是通过百分比设置的, 因此他们经常和他们的父元素具有相似的特点。</li>
+<li>Columns 具有水平的 padding 来在独立的 columns 之间建立约束。</li>
+<li>一共有五个网格层, 每一个 自适应视图 都有一个: 特别小, 小, 中等, 大,和特别大。</li>
+<li>网络层都基于最小的宽度, 也就是意味着他们应用到一层以及这层之上的所有 (例如, .col-s-4 应用到 小, 中等, 大,和特别大的设备)。</li>
+<li>对于更多的语意上标记的你可以使用预先定义好的网格类和 Sass mixins。</li>
+</ul>
+
+            </div>
+          </section>
+          <section id="section-2.1.1" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.1.1</span> 网格容器</h1>
+            <div class="kss-description">
+              <p>将布局元素设置<code>.grid</code>成为网格容器
+
+</p>
+<style>
+   .grid,.grid--fluid,.row, .row div{ box-sizing:border-box;}
+   .grid,.grid--fluid,.row{ border:1px solid #666; }
+   .row  div{ background:#ccc; border:1px solid; }
+</style>
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class='grid'>容器</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&#x27;grid&#x27;&gt;容器&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.1.2" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.1.2</span> 流式布局容器</h1>
+            <div class="kss-description">
+              <p>将最外面的布局元素 <code>.grid</code> 修改为 <code>.grid--fluid</code>，就可以将固定宽度的网格布局转换为 <code>100%</code> 宽度的布局</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid--fluid">
+    流式布局容器
+</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid--fluid&quot;&gt;
+    流式布局容器
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.1.3" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.1.3</span> Rows</h1>
+            <div class="kss-description">
+              <p>将布局元素设置<code>.row</code>成为行容器。</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class='row'>定义行</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&#x27;row&#x27;&gt;定义行&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.1.4" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.1.4</span> Columns</h1>
+            <div class="kss-description">
+              <p>常见样式的大小网格列。
+
+</p>
+<p><table class="table" border="1" style="width:100%;">
+   <thead>
+       <tr>
+           <th></th>
+           <th>
+               极小的<small>&lt;34em / 480px</small>
+           </th>
+           <th>
+               小型的<small>≥34em / 480px</small>
+           </th>
+           <th>
+               中等的<small>≥45em / 720px</small>
+           </th>
+           <th>
+               L大型的<small>≥62em / 992px</small>
+           </th>
+           <th>
+               极大的<small>≥75em / 1200px</small>
+           </th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr>
+           <th>网格行为</th>
+           <td>一直处于水平方向</td>
+           <td colspan="4">开始瓦解，在断点之上保持水平。</td>
+       </tr>
+       <tr>
+           <th>容器的宽度</th>
+           <td>无 (自动)</td>
+           <td>34rem / 480px</td>
+           <td>45rem / 720px</td>
+           <td>60rem / 960px</td>
+           <td>72.25rem / 1156px</td>
+       </tr>
+       <tr>
+           <th>类前缀</th>
+           <td><code>.col--xs--</code></td>
+           <td><code>.col--s--</code></td>
+           <td><code>.col--m--</code></td>
+           <td><code>.col--l--</code></td>
+           <td><code>.col--xl--</code></td>
+       </tr>
+       <tr><th># 列</th><td colspan="5">12</td></tr>
+       <tr><th>列间隙宽度</th><td colspan="5">30px (每一列两侧都有15px)</td></tr>
+       <tr><th>可嵌套性</th><td colspan="5">是</td></tr>
+       <tr><th>可偏移</th><td colspan="5">是</td></tr>
+       <tr><th>列排序</th><td colspan="5">是</td></tr>
+   </tbody>
+</table>
+<br /></p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid">
+   <div class="row">
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+       <div class="col--m--1">.col--m--1</div>
+   </div>
+   <div class="row">
+       <div class="col--m--8">.col--m--8</div>
+       <div class="col--m--4">.col--m--4</div>
+   </div>
+   <div class="row">
+       <div class="col--m--4">.col--m--4</div>
+       <div class="col--m--4">.col--m--4</div>
+       <div class="col--m--4">.col--m--4</div>
+   </div>
+   <div class="row">
+       <div class="col--m--6">.col--m--6</div>
+       <div class="col--m--6">.col--m--6</div>
+   </div>
+   <div class="row">
+       <div class="col--xs--12 col--m--8">.col--xs--12 .col--m--8</div>
+       <div class="col--xs--6 col--m--4">.col--xs--6 .col--m--4</div>
+   </div>
+   <div class="row">
+       <div class="col--xs--6 col--m--4">.col--xs--6 .col--m--4</div>
+       <div class="col--xs--6 col--m--4">.col--xs--6 .col--m--4</div>
+       <div class="col--xs--6 col--m--4">.col--xs--6 .col--m--4</div>
+   </div>
+   <div class="row">
+       <div class="col--xs--6">.col--xs--6</div>
+       <div class="col--xs--6">.col--xs--6</div>
+   </div>
+</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid&quot;&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+       &lt;div class=&quot;col--m--1&quot;&gt;.col--m--1&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--m--8&quot;&gt;.col--m--8&lt;/div&gt;
+       &lt;div class=&quot;col--m--4&quot;&gt;.col--m--4&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--m--4&quot;&gt;.col--m--4&lt;/div&gt;
+       &lt;div class=&quot;col--m--4&quot;&gt;.col--m--4&lt;/div&gt;
+       &lt;div class=&quot;col--m--4&quot;&gt;.col--m--4&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--m--6&quot;&gt;.col--m--6&lt;/div&gt;
+       &lt;div class=&quot;col--m--6&quot;&gt;.col--m--6&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--xs--12 col--m--8&quot;&gt;.col--xs--12 .col--m--8&lt;/div&gt;
+       &lt;div class=&quot;col--xs--6 col--m--4&quot;&gt;.col--xs--6 .col--m--4&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--xs--6 col--m--4&quot;&gt;.col--xs--6 .col--m--4&lt;/div&gt;
+       &lt;div class=&quot;col--xs--6 col--m--4&quot;&gt;.col--xs--6 .col--m--4&lt;/div&gt;
+       &lt;div class=&quot;col--xs--6 col--m--4&quot;&gt;.col--xs--6 .col--m--4&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--xs--6&quot;&gt;.col--xs--6&lt;/div&gt;
+       &lt;div class=&quot;col--xs--6&quot;&gt;.col--xs--6&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.1.5" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.1.5</span> Column 排序</h1>
+            <div class="kss-description">
+              <p>使用 <code>.col--*--push--*</code> 和 <code>.col--*--pull--*</code> 修正类可以轻松地改变我们的内建的网格 columns 的顺序。</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="row">
+   <div class="col--m--9 col--m--push--3">.col--m--9 .col--m--push--3</div>
+   <div class="col--m--3 col--m--pull--9">.col--m--3 .col--m--pull--9</div>
+</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;row&quot;&gt;
+   &lt;div class=&quot;col--m--9 col--m--push--3&quot;&gt;.col--m--9 .col--m--push--3&lt;/div&gt;
+   &lt;div class=&quot;col--m--3 col--m--pull--9&quot;&gt;.col--m--3 .col--m--pull--9&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.1.5" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.1.5</span> Grid flex对齐方式</h1>
+            <div class="kss-description">
+              <h4>列的排序方式</h4>
+<ul>
+<li><code>.col--*--first</code>       - Column 排在 Row 头部。</li>
+<li><code>.col--*--last</code>        - Column 排在 Row 尾部。</li>
+</ul>
+<h4>行的对齐方式</h4>
+<ul>
+<li><code>.row--*--top</code>         - Row 内 Columns 紧靠住其起始边界。</li>
+<li><code>.row--*--center</code>      - Row 内 Columns 上居中放置。</li>
+<li><code>.row--*--bottom</code>      - Row 内 Columns 紧靠住其结束边界。</li>
+</ul>
+<h4>列的对齐方式</h4>
+<ul>
+<li><code>.col--*--top</code>         - Column 紧靠住 Row 起始边界。</li>
+<li><code>.col--*--center</code>      - Column 在 Row 上居中放置。</li>
+<li><code>.col--*--bottom</code>      - Column 紧靠住 Row 结束边界。</li>
+</ul>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  列的排序方式：Column 排在 Row 头部。
+<div class="grid">
+   <div class="row">
+       <div class="col--m--3">11111111</div>
+       <div class="col--m--3 col--m--first">22222222</div>
+       <div class="col--m--3">33333333</div>
+   </div>
+</div>
+行的对齐方式：Row 内 Columns 上居中放置。
+<div class="grid">
+   <div class="row row--m--center">
+       <div class="col--m--3">11111111</div>
+       <div class="col--m--3">22222222 <br /><br /><br /><br /><br /></div>
+       <div class="col--m--3">33333333</div>
+   </div>
+</div>
+列的对齐方式：Column 紧靠住 Row 结束边界。
+<div class="grid">
+   <div class="row">
+       <div class="col--m--4">.col--m--4 <br/><br/><br/><br/><br/><br/></div>
+       <div class="col--m--4 col--m--bottom" >Column 紧靠住 Row 结束边界</div>
+   </div>
+</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">列的排序方式：Column 排在 Row 头部。
+&lt;div class=&quot;grid&quot;&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--m--3&quot;&gt;11111111&lt;/div&gt;
+       &lt;div class=&quot;col--m--3 col--m--first&quot;&gt;22222222&lt;/div&gt;
+       &lt;div class=&quot;col--m--3&quot;&gt;33333333&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+行的对齐方式：Row 内 Columns 上居中放置。
+&lt;div class=&quot;grid&quot;&gt;
+   &lt;div class=&quot;row row--m--center&quot;&gt;
+       &lt;div class=&quot;col--m--3&quot;&gt;11111111&lt;/div&gt;
+       &lt;div class=&quot;col--m--3&quot;&gt;22222222 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/div&gt;
+       &lt;div class=&quot;col--m--3&quot;&gt;33333333&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+列的对齐方式：Column 紧靠住 Row 结束边界。
+&lt;div class=&quot;grid&quot;&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--m--4&quot;&gt;.col--m--4 &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;
+       &lt;div class=&quot;col--m--4 col--m--bottom&quot; &gt;Column 紧靠住 Row 结束边界&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.1.5" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.1.5</span> Column 偏移</h1>
+            <div class="kss-description">
+              <p>将 columns 移动到右边使用 <code>.col--m--offset--*</code> 类. 这些类增加了column 的左面的边缘通过 * columns。
+举例来说, <code>.col--m--offset--4</code> 移动 <code>.col--m--4</code> 四个columns.</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid">
+   <div class="row">
+       <div class="col--m--4">.col--m--4</div>
+       <div class="col--m--4 col--m--offset--4">.col--m--4 .col--m--offset--4</div>
+   </div>
+   <div class="row">
+       <div class="col--m--3 col--m--offset--3">.col--m--3 .col--m--offset--3</div>
+       <div class="col--m--3 col--m--offset--3">.col--m--3 .col--m--offset--3</div>
+   </div>
+   <div class="row">
+       <div class="col--m--6 col--m--offset--3">.col--m--6 .col--m--offset--3</div>
+   </div>
+</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid&quot;&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--m--4&quot;&gt;.col--m--4&lt;/div&gt;
+       &lt;div class=&quot;col--m--4 col--m--offset--4&quot;&gt;.col--m--4 .col--m--offset--4&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--m--3 col--m--offset--3&quot;&gt;.col--m--3 .col--m--offset--3&lt;/div&gt;
+       &lt;div class=&quot;col--m--3 col--m--offset--3&quot;&gt;.col--m--3 .col--m--offset--3&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;row&quot;&gt;
+       &lt;div class=&quot;col--m--6 col--m--offset--3&quot;&gt;.col--m--6 .col--m--offset--3&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.2" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.2</span> Button Group</h1>
+            <div class="kss-description">
+              <p>Theme:
+
+</p>
+<ul>
+<li><code>.btn--basis</code></li>
+<li><code>.btn--primary</code></li>
+<li><code>.btn--danger</code></li>
+<li><code>.btn--accent</code></li>
+</ul>
+<p>Size:
+
+</p>
+<ul>
+<li><code>.btn--xs</code></li>
+<li><code>.btn--s</code></li>
+<li><code>.btn--m</code></li>
+<li><code>.btn--l</code></li>
+<li><code>.btn--xl</code></li>
+</ul>
+<p>Stylize:
+
+</p>
+<ul>
+<li><code>.btn--text</code></li>
+<li><code>.btn--link</code></li>
+<li><code>.btn--outline</code></li>
+</ul>
+<p>Layout:
+
+</p>
+<ul>
+<li><code>.btn--auto</code></li>
+</ul>
+<p>State:
+
+</p>
+<ul>
+<li><code>:active</code></li>
+<li><code>:disabled</code></li>
+<li><code>disabled</code></li>
+</ul>
+
+            </div>
+          </section>
+          <section id="section-2.2.1" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.2.1</span> Button</h1>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <button class="btn btn--basis">按钮</button>
+<button class="btn btn--primary">按钮</button>
+<button class="btn btn--danger">按钮</button>
+<button class="btn btn--accent">按钮</button>
+<button class="btn btn--basis" data-state="disabled">按钮</button>
+<button class="btn btn--primary" data-state="disabled">按钮</button>
+<button class="btn btn--danger" data-state="disabled">按钮</button>
+<button class="btn btn--accent" data-state="disabled">按钮</button>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;button class=&quot;btn btn--basis&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn--primary&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn--danger&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn--accent&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn--basis&quot; data-state=&quot;disabled&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn--primary&quot; data-state=&quot;disabled&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn--danger&quot; data-state=&quot;disabled&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn--accent&quot; data-state=&quot;disabled&quot;&gt;按钮&lt;/button&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.2.2" class="kss-section kss-depth-3">
+            <h1 class="kss-title"><span class="kss-ref">2.2.2</span> Float</h1>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <button class="btn btn--basis" data-stylize="fab">+</button>
+<button class="btn btn--primary" data-stylize="fab">+</button>
+<button class="btn btn--danger" data-stylize="fab">+</button>
+<button class="btn btn--accent" data-stylize="fab">+</button>
+<button class="btn btn--basis" data-stylize="fab" data-state="disabled">+</button>
+<button class="btn btn--primary" data-stylize="fab" data-state="disabled">+</button>
+<button class="btn btn--danger" data-stylize="fab" data-state="disabled">+</button>
+<button class="btn btn--accent" data-stylize="fab" data-state="disabled">+</button>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;button class=&quot;btn btn--basis&quot; data-stylize=&quot;fab&quot;&gt;+&lt;/button&gt;
+&lt;button class=&quot;btn btn--primary&quot; data-stylize=&quot;fab&quot;&gt;+&lt;/button&gt;
+&lt;button class=&quot;btn btn--danger&quot; data-stylize=&quot;fab&quot;&gt;+&lt;/button&gt;
+&lt;button class=&quot;btn btn--accent&quot; data-stylize=&quot;fab&quot;&gt;+&lt;/button&gt;
+&lt;button class=&quot;btn btn--basis&quot; data-stylize=&quot;fab&quot; data-state=&quot;disabled&quot;&gt;+&lt;/button&gt;
+&lt;button class=&quot;btn btn--primary&quot; data-stylize=&quot;fab&quot; data-state=&quot;disabled&quot;&gt;+&lt;/button&gt;
+&lt;button class=&quot;btn btn--danger&quot; data-stylize=&quot;fab&quot; data-state=&quot;disabled&quot;&gt;+&lt;/button&gt;
+&lt;button class=&quot;btn btn--accent&quot; data-stylize=&quot;fab&quot; data-state=&quot;disabled&quot;&gt;+&lt;/button&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.3" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.3</span> checkbox</h1>
+            <div class="kss-description">
+              <p>State:
+
+</p>
+<ul>
+<li><code>active</code></li>
+<li><code>disabled</code></li>
+</ul>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="checkbox">
+  <input class="checkbox-tag" type="checkbox" id="cb-demo">
+  <div class="checkbox-bd">
+    <span class="checkbox-indicator"></span>
+  </div>
+</div>
+<div class="checkbox" data-state="active">
+  <input class="checkbox-tag" type="checkbox" id="cb-demo">
+  <div class="checkbox-bd">
+    <span class="checkbox-indicator"></span>
+  </div>
+</div>
+<div class="checkbox" data-state="disabled">
+  <input class="checkbox-tag" type="checkbox" id="cb-demo">
+  <div class="checkbox-bd">
+    <span class="checkbox-indicator"></span>
+  </div>
+</div>
+<label class="label" for="cb-demo">多选控件</label>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;checkbox&quot;&gt;
+  &lt;input class=&quot;checkbox-tag&quot; type=&quot;checkbox&quot; id=&quot;cb-demo&quot;&gt;
+  &lt;div class=&quot;checkbox-bd&quot;&gt;
+    &lt;span class=&quot;checkbox-indicator&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox&quot; data-state=&quot;active&quot;&gt;
+  &lt;input class=&quot;checkbox-tag&quot; type=&quot;checkbox&quot; id=&quot;cb-demo&quot;&gt;
+  &lt;div class=&quot;checkbox-bd&quot;&gt;
+    &lt;span class=&quot;checkbox-indicator&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox&quot; data-state=&quot;disabled&quot;&gt;
+  &lt;input class=&quot;checkbox-tag&quot; type=&quot;checkbox&quot; id=&quot;cb-demo&quot;&gt;
+  &lt;div class=&quot;checkbox-bd&quot;&gt;
+    &lt;span class=&quot;checkbox-indicator&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;label class=&quot;label&quot; for=&quot;cb-demo&quot;&gt;多选控件&lt;/label&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.4" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.4</span> radio</h1>
+            <div class="kss-description">
+              <p>State:
+
+</p>
+<ul>
+<li><code>active</code></li>
+<li><code>disabled</code></li>
+</ul>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="radio">
+  <input class="radio-tag" type="radio" id="rad-demo">
+  <div class="radio-bd">
+    <span class="radio-indicator"></span>
+  </div>
+</div>
+<div class="radio" data-state="active">
+  <input class="radio-tag" type="radio" id="rad-demo">
+  <div class="radio-bd">
+    <span class="radio-indicator"></span>
+  </div>
+</div>
+<div class="radio" data-state="disabled">
+  <input class="radio-tag" type="radio" id="rad-demo">
+  <div class="radio-bd">
+    <span class="radio-indicator"></span>
+  </div>
+</div>
+<label class="label" for="rad-demo">单选控件</label>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;radio&quot;&gt;
+  &lt;input class=&quot;radio-tag&quot; type=&quot;radio&quot; id=&quot;rad-demo&quot;&gt;
+  &lt;div class=&quot;radio-bd&quot;&gt;
+    &lt;span class=&quot;radio-indicator&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot; data-state=&quot;active&quot;&gt;
+  &lt;input class=&quot;radio-tag&quot; type=&quot;radio&quot; id=&quot;rad-demo&quot;&gt;
+  &lt;div class=&quot;radio-bd&quot;&gt;
+    &lt;span class=&quot;radio-indicator&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot; data-state=&quot;disabled&quot;&gt;
+  &lt;input class=&quot;radio-tag&quot; type=&quot;radio&quot; id=&quot;rad-demo&quot;&gt;
+  &lt;div class=&quot;radio-bd&quot;&gt;
+    &lt;span class=&quot;radio-indicator&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;label class=&quot;label&quot; for=&quot;rad-demo&quot;&gt;单选控件&lt;/label&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.5" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.5</span> toggle</h1>
+            <div class="kss-description">
+              <p>State:
+
+</p>
+<ul>
+<li><code>active</code></li>
+<li><code>disabled</code></li>
+</ul>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="md-toggle">
+  <input class="toggle-tag" type="checkbox" id="tg-demo">
+  <div class="toggle-bd">
+    <span class="toggle-indicator"></span>
+  </div>
+</div>
+<div class="toggle" data-state="active">
+  <input class="toggle-tag" type="checkbox" id="tg-demo">
+  <div class="toggle-bd">
+    <span class="toggle-indicator"></span>
+  </div>
+</div>
+<div class="toggle" data-state="disabled">
+  <input class="toggle-tag" type="checkbox" id="tg-demo">
+  <div class="toggle-bd">
+    <span class="toggle-indicator"></span>
+  </div>
+</div>
+<label class="label" for="tg-demo">开关</label>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;md-toggle&quot;&gt;
+  &lt;input class=&quot;toggle-tag&quot; type=&quot;checkbox&quot; id=&quot;tg-demo&quot;&gt;
+  &lt;div class=&quot;toggle-bd&quot;&gt;
+    &lt;span class=&quot;toggle-indicator&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;toggle&quot; data-state=&quot;active&quot;&gt;
+  &lt;input class=&quot;toggle-tag&quot; type=&quot;checkbox&quot; id=&quot;tg-demo&quot;&gt;
+  &lt;div class=&quot;toggle-bd&quot;&gt;
+    &lt;span class=&quot;toggle-indicator&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;toggle&quot; data-state=&quot;disabled&quot;&gt;
+  &lt;input class=&quot;toggle-tag&quot; type=&quot;checkbox&quot; id=&quot;tg-demo&quot;&gt;
+  &lt;div class=&quot;toggle-bd&quot;&gt;
+    &lt;span class=&quot;toggle-indicator&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;label class=&quot;label&quot; for=&quot;tg-demo&quot;&gt;开关&lt;/label&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.6" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.6</span> *************************************</h1>
+            <div class="kss-description">
+              <p>  Slider
+  -&gt; components Slider
+
+</p>
+<hr>
+<p>Slider</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class='component-switch'>
+  <a class="switch-Pole"></a>
+  <span class="switch-thumb"></span>
+</div>
+<div class='component-switch active'>
+  <a class="switch-Pole"></a>
+  <span class="switch-thumb"></span>
+</div>
+<div class='component-switch disabled'>
+  <a class="switch-Pole"></a>
+  <span class="switch-thumb"></span>
+</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&#x27;component-switch&#x27;&gt;
+  &lt;a class=&quot;switch-Pole&quot;&gt;&lt;/a&gt;
+  &lt;span class=&quot;switch-thumb&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&#x27;component-switch active&#x27;&gt;
+  &lt;a class=&quot;switch-Pole&quot;&gt;&lt;/a&gt;
+  &lt;span class=&quot;switch-thumb&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&#x27;component-switch disabled&#x27;&gt;
+  &lt;a class=&quot;switch-Pole&quot;&gt;&lt;/a&gt;
+  &lt;span class=&quot;switch-thumb&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.7" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.7</span> Badges</h1>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <span class="badge">account_box</span>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;span class=&quot;badge&quot;&gt;account_box&lt;/span&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.8" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.8</span> Panels</h1>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="panel">
+  <!-- content -->
+</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;panel&quot;&gt;
+  &lt;!-- content --&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.9" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.9</span> Drop Down Menu</h1>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="dropdown">
+  <button class="btn btn--primary" data-toggle="dropdown">
+    下拉框
+    <span class="triangle"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="javascript:void(0)">Option 1</a></li>
+    <li><a href="javascript:void(0)">Option 2</a></li>
+    <li><a href="javascript:void(0)">Option 3</a></li>
+    <li><a href="javascript:void(0)">Option 4</a></li>
+  </ul>
+</div>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;dropdown&quot;&gt;
+  &lt;button class=&quot;btn btn--primary&quot; data-toggle=&quot;dropdown&quot;&gt;
+    下拉框
+    &lt;span class=&quot;triangle&quot;&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class=&quot;dropdown-menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;Option 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;Option 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;Option 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;Option 4&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.10" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.10</span> Pagination</h1>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <ul class="pagination">
+    <li data-state="disabled">
+        <a href="javascript:void(0)"><i class=""><</i></a>
+    </li>
+    <li data-state="active"><a href="javascript:void(0)">1</a></li>
+    <li><a href="javascript:void(0)">2</a></li>
+    <li><a href="javascript:void(0)">3</a></li>
+    <li><a href="javascript:void(0)">4</a></li>
+    <li><a href="javascript:void(0)">5</a></li>
+    <li>
+        <a href="javascript:void(0)"><i class="">></i></a>
+     </li>
+</ul>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;ul class=&quot;pagination&quot;&gt;
+    &lt;li data-state=&quot;disabled&quot;&gt;
+        &lt;a href=&quot;javascript:void(0)&quot;&gt;&lt;i class=&quot;&quot;&gt;&lt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li data-state=&quot;active&quot;&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:void(0)&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;javascript:void(0)&quot;&gt;&lt;i class=&quot;&quot;&gt;&gt;&lt;/i&gt;&lt;/a&gt;
+     &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-2.12" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.12</span> list</h1>
+            <div class="kss-description">
+                <li class="list-item list-item-two-line ">
+    <span class="list-item-primary-content">
+      <i class="icon-user"></i>
+      <span class="list-item-title">Bryan Cranston</span>
+      <span class="list-item-sub-title">62 Episodes</span>
+    </span>
+    <a class="list-item-secondary-action" href="javascript:viod(0)"><i class="icon-star"></i></a>
+  </li>
+
+  <li class="list-item">
+    <span class="list-item-primary-content">
+    <i class="icon-star"></i>
+    Bryan Cranston
+    </span>
+  </li>
+
+  <li class="list-item list-item-three-line">
+    <span class="list-item-primary-content">
+      <i class="icon-star list-item-icon"></i>
+      <span class="list-item-title">Bryan Cranston</span>
+      <span class="list-item-text-body">
+        Bryan Cranston played the role of Bryan Cranston in Breaking Bad,he is also know
+        for playing Hal in Malcom in the Middle. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Curabitur venenatis urna eget cursus varius. Donec ultrices quis arcu quis euismod.
+        Mauris sollicitudin neque lectus, id bibendum libero eleifend sed.
+      </span>
+    </span>
+    <span class="list-item-secondary-content">
+      <span class="list-item-secondary-info">Actor</span>
+      <a class="list-item-secondary-action" href="javascript:viod(0)"><i class="icon-star"></i></a>
+    </span>
+  </li>
+
+
+  <li class="list-item list-item-two-line">
+   <span class="list-item-primary-content">
+     <i class="icon-star  list-item-icon"></i>
+     <span class=list-item-text>Aaron Paul</span>
+     <span class="list-item-sub-title">62 Episodes</span>
+   </span>
+   <span class="list-item-secondary-content">
+     <span class="list-item-secondary-info">Actor</span>
+     <a class="list-item-secondary-action" href="#"><i class="icon-star"></i></a>
+   </span>
+ </li>
+
+<p></ul></p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <ul class="list">
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;ul class=&quot;list&quot;&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+        </article>
+        <footer class="kss-footer">
+          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+  </body>
+</html>
