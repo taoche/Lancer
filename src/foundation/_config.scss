@@ -79,14 +79,14 @@ $c-end-accent    : darken($c-accent, $deg-darker   * 1.5);
 $c-hov-basis   : $c-basis;
 $c-hov-primary : lighten($c-primary, 5%);
 $c-hov-danger  : lighten($c-danger, 5%);
-$c-hov-accent    : lighten($c-accent, 5%);
+$c-hov-accent  : lighten($c-accent, 5%);
 
 // Disabled Colors
 
 $c-dis-basis   : $c-basis;
 $c-dis-primary : lighten($c-primary, $deg-light);
 $c-dis-danger  : lighten($c-danger, $deg-light);
-$c-dis-accent    : lighten($c-accent, $deg-light);
+$c-dis-accent  : lighten($c-accent, $deg-light);
 
 // Border Colors
 
