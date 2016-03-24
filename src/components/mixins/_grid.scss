@@ -8,89 +8,89 @@
 
 
 // 最小断点宽度, Null 为 最小(第一)断点。
-//    >> breakpoint-min(sm, (xs: 0, s: 34rem, m: 45rem))
-//    34rem
+//  >> breakpoint-min(sm, (xs: 0, s: 34rem, m: 45rem))
+//  34rem
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
-    $min: map-get($breakpoints, $name);
-    @return if($min != 0, $min, null);
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
 }
 
 
 // 容器
 @mixin make-container($gutter: $grid-gutter-width) {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left:  ($gutter / 2);
-    padding-right: ($gutter / 2);
-    @include clearfix();
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @include clearfix();
 }
 
 
 // 行
 @mixin make-row($gutter: $grid-gutter-width) {
-    @if $enable-flex {
-        display: flex;
-        flex-wrap: wrap;
-    } @else {
-        @include clearfix();
-    }
-    margin-left:  ($gutter / -2);
-    margin-right: ($gutter / -2);
+  @if $enable-flex {
+    display: flex;
+    flex-wrap: wrap;
+  } @else {
+    @include clearfix();
+  }
+  margin-left:  ($gutter / -2);
+  margin-right: ($gutter / -2);
 }
 
 
 // 列
 @mixin make-col($gutter: $grid-gutter-width) {
-    position: relative;
-    @if $enable-flex {
-        // Do nothing
-    } @else {
-        float: left;
-    }
-    min-height: 1px;
-    padding-left:  ($gutter / 2);
-    padding-right: ($gutter / 2);
+  position: relative;
+  @if $enable-flex {
+    // Do nothing
+  } @else {
+    float: left;
+  }
+  min-height: 1px;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
 }
 
 
 // 单元格
 @mixin make-col-span($size, $columns: $grid-columns) {
-    @if $enable-flex {
-        flex: 0 0 percentage($size / $columns);
-    } @else {
-        width: percentage($size / $columns);
-    }
+  @if $enable-flex {
+    flex: 0 0 percentage($size / $columns);
+  } @else {
+    width: percentage($size / $columns);
+  }
 }
 
 
 // 列偏移
 @mixin make-col-offset($size, $columns: $grid-columns) {
-    margin-left: percentage($size / $columns);
+  margin-left: percentage($size / $columns);
 }
 
 
 // 推列
 @mixin make-col-push($size, $columns: $grid-columns) {
-    left: if($size > 0, percentage($size / $columns), auto);
+  left: if($size > 0, percentage($size / $columns), auto);
 }
 
 
 // 拉列
 @mixin make-col-pull($size, $columns: $grid-columns) {
-    right: if($size > 0, percentage($size / $columns), auto);
+  right: if($size > 0, percentage($size / $columns), auto);
 }
 
 
 // 分发 推 拉 偏移
 @mixin make-col-modifier($type, $size, $columns) {
-    // 没有动态mixin, 只能判断
-    @if $type == push {
-        @include make-col-push($size, $columns);
-    } @else if $type == pull {
-        @include make-col-pull($size, $columns);
-    } @else if $type == offset {
-        @include make-col-offset($size, $columns);
-    }
+  // 没有动态mixin, 只能判断
+  @if $type == push {
+    @include make-col-push($size, $columns);
+  } @else if $type == pull {
+    @include make-col-pull($size, $columns);
+  } @else if $type == offset {
+    @include make-col-offset($size, $columns);
+  }
 }
 
 
@@ -98,71 +98,71 @@
 // 媒体查询不低于最低断点的宽度。最小的断点没有媒体查询。
 // 使 @content 应用到指定断点和其他宽度。
 @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-    $min: breakpoint-min($name, $breakpoints);
-    @if $min {
-        @media (min-width: $min) {
-            @content;
-        }
-    } @else {
-        @content;
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
     }
+  } @else {
+    @content;
+  }
 }
 
 
 // 框架网格生成
 // Bootstrap 仅用生成网格类给定 $grid-columns 任意值的正确数量
 @mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
-    // 所有断点的常用属性
-    %grid-column {
-        position: relative;
-        // 防止空列时折叠
-        min-height: 1px;
-        // 通过padding填充间隙
-        padding-left: ($gutter / 2);
-        padding-right: ($gutter / 2);
+  // 所有断点的常用属性
+  %grid-column {
+    position: relative;
+    // 防止空列时折叠
+    min-height: 1px;
+    // 通过padding填充间隙
+    padding-left: ($gutter / 2);
+    padding-right: ($gutter / 2);
+  }
+  @each $breakpoint in map-keys($breakpoints) {
+    // 通用属性
+    @for $i from 1 through $columns {
+      .col--#{$breakpoint}--#{$i} {
+        @extend %grid-column;
+      }
     }
-    @each $breakpoint in map-keys($breakpoints) {
-        // 通用属性
-        @for $i from 1 through $columns {
-            .col--#{$breakpoint}--#{$i} {
-                @extend %grid-column;
-            }
+    @include media-breakpoint-up($breakpoint) {
+      // 非flex (占位选择器)
+      %grid-column--float--#{$breakpoint} {
+        float: left;
+      }
+      // 计算尺寸
+      @for $i from 1 through $columns {
+        .col--#{$breakpoint}--#{$i} {
+          // 非 flex
+          @if not $enable-flex {
+            @extend %grid-column--float--#{$breakpoint};
+          }
+          @include make-col-span($i, $columns);
         }
-        @include media-breakpoint-up($breakpoint) {
-            // 非flex (占位选择器)
-            %grid-column--float--#{$breakpoint} {
-                float: left;
-            }
-            // 计算尺寸
-            @for $i from 1 through $columns {
-                .col--#{$breakpoint}--#{$i} {
-                    // 非 flex
-                    @if not $enable-flex {
-                        @extend %grid-column--float--#{$breakpoint};
-                    }
-                    @include make-col-span($i, $columns);
-                }
-            }
-            // 推 拉 偏移
-            @each $modifier in (pull, push, offset) {
-                @for $i from 0 through $columns {
-                    .col--#{$breakpoint}--#{$modifier}--#{$i} {
-                        @include make-col-modifier($modifier, $i, $columns)
-                    }
-                }
-            }
+      }
+      // 推 拉 偏移
+      @each $modifier in (pull, push, offset) {
+        @for $i from 0 through $columns {
+          .col--#{$breakpoint}--#{$modifier}--#{$i} {
+            @include make-col-modifier($modifier, $i, $columns)
+          }
         }
+      }
     }
+  }
 }
 
 
 
 @mixin clearfix() {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 

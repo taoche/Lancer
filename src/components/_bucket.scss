@@ -2,7 +2,7 @@
 //
 //   Bucket
 //   -> Based on:
-//      * http://jsfiddle.net/necolas/rZvEF/
+//    * http://jsfiddle.net/necolas/rZvEF/
 //
 // -------------------------------------
 //   Template (Haml)
@@ -11,10 +11,10 @@
 // .bucket[flag]
 //
 //   .bucket-media
-//     / ...
+//   / ...
 //
 //   .bucket-content
-//     / ...
+//   / ...
 //
 // *************************************
 
@@ -32,7 +32,7 @@
   display: table;
 
   .bucket-content {
-    vertical-align: middle;
+  vertical-align: middle;
   }
 }
 
@@ -54,7 +54,7 @@
   margin-right: $b-space;
 
   > img {
-    display: block;
-    max-width: none;
+  display: block;
+  max-width: none;
   }
 }

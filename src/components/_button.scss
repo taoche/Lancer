@@ -76,30 +76,30 @@
 // -------------------------------------
 
 .btn {
-    font-size: $b-fs-m;
-    line-height: 36px;
+  font-size: $b-fs-m;
+  line-height: 36px;
 
-    position: relative;
+  position: relative;
 
-    display: inline-block;
+  display: inline-block;
 
-    height: 36px;
+  height: 36px;
 
-    -webkit-user-select: none;
-    transition: all .2s ease-in-out;
-    animation-duration: .0001s;
-    text-align: center;
-    vertical-align: middle;
+  -webkit-user-select: none;
+  transition: all .2s ease-in-out;
+  animation-duration: .0001s;
+  text-align: center;
+  vertical-align: middle;
 
-    border: none;
-    outline: 0;
-    background-color: transparent;
-    background-image: none;
+  border: none;
+  outline: 0;
+  background-color: transparent;
+  background-image: none;
 
-    @extend .pht;
-    @extend .nowrap;
-    @extend %reset-gap;
-    @extend %reset-appearance;
+  @extend .pht;
+  @extend .nowrap;
+  @extend %reset-gap;
+  @extend %reset-appearance;
 }
 
 // -------------------------------------
@@ -112,65 +112,65 @@
   &.btn--primary,
   &.btn--danger,
   &.btn--accent {
-      border-radius: $b-rad-round;
+    border-radius: $b-rad-round;
   }
 
   &.btn--basis {
-      @extend .ui-basis;
+    @extend .ui-basis;
   }
 
   &.btn--primary {
-      @extend .ui-primary;
+    @extend .ui-primary;
   }
 
   &.btn--danger {
-      @extend .ui-danger;
+    @extend .ui-danger;
   }
 
   &.btn--accent {
-      @extend .ui-accent;
+    @extend .ui-accent;
   }
 }
 
 // ----- Size ----- //
 
 .btn--xs {
-    font-size: $b-fs-s;
+  font-size: $b-fs-s;
 }
 
 .btn--xl {
-    font-size: $b-fs-l;
+  font-size: $b-fs-l;
 }
 
 .btn--xs,
 .btn--s {
-    padding-top: $b-vgap-half;
-    padding-bottom: $b-vgap-half;
+  padding-top: $b-vgap-half;
+  padding-bottom: $b-vgap-half;
 }
 
 .btn--l,
 .btn--xl {
-    padding-top: $b-vgap-double;
-    padding-bottom: $b-vgap-double;
+  padding-top: $b-vgap-double;
+  padding-bottom: $b-vgap-double;
 }
 
 // ----- Stylize ----- //
 
 .btn[data-stylize~='fab'],
 .btn--fab {
-    line-height: 55px;
+  line-height: 55px;
 
-    width: 55px;
-    height: 55px;
+  width: 55px;
+  height: 55px;
 
-    border-radius: 50%;
-    @extend .paf;
+  border-radius: 50%;
+  @extend .paf;
 }
 
 // ----- Layout ----- //
 
 .btn--auto {
-    width: auto;
+  width: auto;
 }
 
 // -------------------------------------
@@ -180,57 +180,57 @@
 // ----- Active ----- //
 
 .btn:active {
-    &.btn--basis,
-    &.btn--primary,
-    &.btn--danger,
-    &.btn--accent {
-        box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
-    }
+  &.btn--basis,
+  &.btn--primary,
+  &.btn--danger,
+  &.btn--accent {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+  }
 }
 
 // ----- Hover ----- //
 
 .btn:hover {
-    &.btn--basis,
-    &.btn--primary,
-    &.btn--danger,
-    &.btn--accent {
-        box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 2px rgba(0, 0, 0, .2);
-    }
-    &.btn--primary {
-        background-color: $c-hov-primary;
-    }
-    &.btn--danger {
-        background-color: $c-hov-danger;
-    }
-    &.btn--accent {
-        background-color: $c-hov-accent;
-    }
+  &.btn--basis,
+  &.btn--primary,
+  &.btn--danger,
+  &.btn--accent {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 2px rgba(0, 0, 0, .2);
+  }
+  &.btn--primary {
+    background-color: $c-hov-primary;
+  }
+  &.btn--danger {
+    background-color: $c-hov-danger;
+  }
+  &.btn--accent {
+    background-color: $c-hov-accent;
+  }
 }
 
 // ----- Disabled ----- //
 
 .btn:disabled,
 .btn.disabled {
-    &.btn--basis,
-    &.btn--primary,
-    &.btn--danger,
-    &.btn--accent {
-        cursor: not-allowed;
-        pointer-events: none;
-    }
-    &.btn--basis {
-        background-color: $c-dis-basis;
-    }
-    &.btn--primary {
-        background-color: #d5d5d5;
-    }
-    &.btn--danger {
-        background-color: $c-dis-danger;
-    }
-    &.btn--accent {
-        background-color: $c-dis-accent;
-    }
+  &.btn--basis,
+  &.btn--primary,
+  &.btn--danger,
+  &.btn--accent {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.btn--basis {
+    background-color: $c-dis-basis;
+  }
+  &.btn--primary {
+    background-color: #d5d5d5;
+  }
+  &.btn--danger {
+    background-color: $c-dis-danger;
+  }
+  &.btn--accent {
+    background-color: $c-dis-accent;
+  }
 }
 
 

@@ -11,49 +11,49 @@
 // <ul class="list">
 //
 //   <li class="list-item list-item-two-line ">
-//     <span class="list-item-primary-content">
-//       <i class="icon-user"></i>
-//       <span class="list-item-title">Bryan Cranston</span>
-//       <span class="list-item-sub-title">62 Episodes</span>
-//     </span>
-//     <a class="list-item-secondary-action" href="javascript:viod(0)"><i class="icon-star"></i></a>
+//   <span class="list-item-primary-content">
+//     <i class="icon-user"></i>
+//     <span class="list-item-title">Bryan Cranston</span>
+//     <span class="list-item-sub-title">62 Episodes</span>
+//   </span>
+//   <a class="list-item-secondary-action" href="javascript:viod(0)"><i class="icon-star"></i></a>
 //   </li>
 //
 //   <li class="list-item">
-//     <span class="list-item-primary-content">
-//     <i class="icon-star"></i>
-//     Bryan Cranston
-//     </span>
+//   <span class="list-item-primary-content">
+//   <i class="icon-star"></i>
+//   Bryan Cranston
+//   </span>
 //   </li>
 //
 //   <li class="list-item list-item-three-line">
-//     <span class="list-item-primary-content">
-//       <i class="icon-star list-item-icon"></i>
-//       <span class="list-item-title">Bryan Cranston</span>
-//       <span class="list-item-text-body">
-//         Bryan Cranston played the role of Bryan Cranston in Breaking Bad,he is also know
-//         for playing Hal in Malcom in the Middle. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-//         Curabitur venenatis urna eget cursus varius. Donec ultrices quis arcu quis euismod.
-//         Mauris sollicitudin neque lectus, id bibendum libero eleifend sed.
-//       </span>
+//   <span class="list-item-primary-content">
+//     <i class="icon-star list-item-icon"></i>
+//     <span class="list-item-title">Bryan Cranston</span>
+//     <span class="list-item-text-body">
+//     Bryan Cranston played the role of Bryan Cranston in Breaking Bad,he is also know
+//     for playing Hal in Malcom in the Middle. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+//     Curabitur venenatis urna eget cursus varius. Donec ultrices quis arcu quis euismod.
+//     Mauris sollicitudin neque lectus, id bibendum libero eleifend sed.
 //     </span>
-//     <span class="list-item-secondary-content">
-//       <span class="list-item-secondary-info">Actor</span>
-//       <a class="list-item-secondary-action" href="javascript:viod(0)"><i class="icon-star"></i></a>
-//     </span>
+//   </span>
+//   <span class="list-item-secondary-content">
+//     <span class="list-item-secondary-info">Actor</span>
+//     <a class="list-item-secondary-action" href="javascript:viod(0)"><i class="icon-star"></i></a>
+//   </span>
 //   </li>
 //
 //
 //   <li class="list-item list-item-two-line">
-//    <span class="list-item-primary-content">
-//      <i class="icon-star  list-item-icon"></i>
-//      <span class=list-item-text>Aaron Paul</span>
-//      <span class="list-item-sub-title">62 Episodes</span>
-//    </span>
-//    <span class="list-item-secondary-content">
-//      <span class="list-item-secondary-info">Actor</span>
-//      <a class="list-item-secondary-action" href="#"><i class="icon-star"></i></a>
-//    </span>
+//  <span class="list-item-primary-content">
+//    <i class="icon-star  list-item-icon"></i>
+//    <span class=list-item-text>Aaron Paul</span>
+//    <span class="list-item-sub-title">62 Episodes</span>
+//  </span>
+//  <span class="list-item-secondary-content">
+//    <span class="list-item-secondary-info">Actor</span>
+//    <a class="list-item-secondary-action" href="#"><i class="icon-star"></i></a>
+//  </span>
 //  </li>
 //
 // </ul>
@@ -73,7 +73,7 @@ $list-supporting-text-text-color: unquote("rgba(#{$color-black}, 0.54)");
   letter-spacing: 0;
 
   @if $colorContrast {
-    opacity: 0.87;
+  opacity: 0.87;
   }
 }
 
@@ -84,7 +84,7 @@ $list-supporting-text-text-color: unquote("rgba(#{$color-black}, 0.54)");
   letter-spacing: 0;
 
   @if $colorContrast {
-    opacity: 0.54;
+  opacity: 0.54;
   }
 }
 
@@ -101,36 +101,36 @@ $list-supporting-text-text-color: unquote("rgba(#{$color-black}, 0.54)");
   cursor: default;
 
   .list-item-primary-content {
-    order:0;
-    flex-grow: 2;
-    text-decoration: none;
+  order:0;
+  flex-grow: 2;
+  text-decoration: none;
 
-    i[class^="icon-"] {
-      font-size: 40px;
-      line-height: 0;
-      vertical-align: middle;
-      padding: 0 12px 0 0;
-    }
+  i[class^="icon-"] {
+    font-size: 40px;
+    line-height: 0;
+    vertical-align: middle;
+    padding: 0 12px 0 0;
+  }
   }
 
   .list-item-secondary-content {
-    display: flex;
-    flex-flow: column;
-    align-items: flex-end;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
 
-    .list-item-secondary-action label {
-      display: inline;
-    }
+  .list-item-secondary-action label {
+    display: inline;
+  }
 
-    .list-item-secondary-info {
-      @include typo-caption();
-      margin-bottom: 10px;
-      color: $list-supporting-text-text-color;
-    }
+  .list-item-secondary-info {
+    @include typo-caption();
+    margin-bottom: 10px;
+    color: $list-supporting-text-text-color;
+  }
 
-    .list-item-sub-header {
-      padding: 0 0 0 16px;
-    }
+  .list-item-sub-header {
+    padding: 0 0 0 16px;
+  }
   }
 }
 
@@ -146,15 +146,15 @@ $list-supporting-text-text-color: unquote("rgba(#{$color-black}, 0.54)");
   height: 72px;
 
   .list-item-primary-content {
-    i[class^="icon-"] {
-      vertical-align: text-bottom;
-    }
+  i[class^="icon-"] {
+    vertical-align: text-bottom;
+  }
 
-    .list-item-sub-title, {
-      @include typo-caption();
-      display: block;
-      padding : 0 0 0 56px;
-    }
+  .list-item-sub-title, {
+    @include typo-caption();
+    display: block;
+    padding : 0 0 0 56px;
+  }
   }
 }
 
@@ -162,18 +162,18 @@ $list-supporting-text-text-color: unquote("rgba(#{$color-black}, 0.54)");
   height: 88px;
 
   .list-item-primary-content {
-    i[class^="icon-"] {
-      vertical-align: text-bottom;
-    }
+  i[class^="icon-"] {
+    vertical-align: text-bottom;
+  }
   }
 
   .list-item-text-body {
-    @include typo-caption();
-    color: $list-supporting-text-text-color;
-    display: block;
-    height: 24px;
-    padding: 0 0 0 56px;
-    overflow: hidden;
+  @include typo-caption();
+  color: $list-supporting-text-text-color;
+  display: block;
+  height: 24px;
+  padding: 0 0 0 56px;
+  overflow: hidden;
   }
 }
 

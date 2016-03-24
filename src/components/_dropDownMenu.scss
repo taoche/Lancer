@@ -10,67 +10,67 @@
 // Markup:
 // <div class="dropdown">
 //   <button class="btn btn--primary" data-toggle="dropdown">
-//     下拉框
-//     <span class="triangle"></span>
+//   下拉框
+//   <span class="triangle"></span>
 //   </button>
 //   <ul class="dropdown-menu">
-//     <li><a href="javascript:void(0)">Option 1</a></li>
-//     <li><a href="javascript:void(0)">Option 2</a></li>
-//     <li><a href="javascript:void(0)">Option 3</a></li>
-//     <li><a href="javascript:void(0)">Option 4</a></li>
+//   <li><a href="javascript:void(0)">Option 1</a></li>
+//   <li><a href="javascript:void(0)">Option 2</a></li>
+//   <li><a href="javascript:void(0)">Option 3</a></li>
+//   <li><a href="javascript:void(0)">Option 4</a></li>
 //   </ul>
 // </div>
 //
 // Styleguide 2.9
 
 .dropdown{
-    position: relative
+  position: relative
 }
 
 .triangle {
-    display: inline-block;
+  display: inline-block;
 
-    margin-left: 2px;
-    vertical-align: middle;
+  margin-left: 2px;
+  vertical-align: middle;
 
-    @include mix-triangle(bottom, 5px, $c-basis);
+  @include mix-triangle(bottom, 5px, $c-basis);
 }
 
 
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: block;
-    min-width: 140px;
-    padding: 5px 0;
-    margin: 2px 0 0;
-    list-style: none;
-    font-size: 14px;
-    text-align: left;
-    background-color: #FFF;
-    border-radius: 2px;
-    z-index: 1;
-    background-clip: padding-box;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block;
+  min-width: 140px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #FFF;
+  border-radius: 2px;
+  z-index: 1;
+  background-clip: padding-box;
 
-    @extend .shadow--3dp;
+  @extend .shadow--3dp;
 }
 
 .dropdown-menu>li>a {
-    display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: 400;
-    line-height: 1.429;
-    color: rgba(0,0,0,.87);
-    white-space: nowrap;
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.429;
+  color: rgba(0,0,0,.87);
+  white-space: nowrap;
 }
 
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-    text-decoration: none;
-    color: rgba(0,0,0,.87);
-    background-color: #EEE;
+  text-decoration: none;
+  color: rgba(0,0,0,.87);
+  background-color: #EEE;
 }
 
 // -------------------------------------

@@ -16,19 +16,19 @@
 // <div class="radio">
 //   <input class="radio-tag" type="radio" id="rad-demo">
 //   <div class="radio-bd">
-//     <span class="radio-indicator"></span>
+//   <span class="radio-indicator"></span>
 //   </div>
 // </div>
 // <div class="radio" data-state="active">
 //   <input class="radio-tag" type="radio" id="rad-demo">
 //   <div class="radio-bd">
-//     <span class="radio-indicator"></span>
+//   <span class="radio-indicator"></span>
 //   </div>
 // </div>
 // <div class="radio" data-state="disabled">
 //   <input class="radio-tag" type="radio" id="rad-demo">
 //   <div class="radio-bd">
-//     <span class="radio-indicator"></span>
+//   <span class="radio-indicator"></span>
 //   </div>
 // </div>
 // <label class="label" for="rad-demo">单选控件</label>
@@ -41,11 +41,11 @@
 // -------------------------------------
 
 .radio {
-    position: relative;
+  position: relative;
 
-    display: inline-block;
+  display: inline-block;
 
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 // -------------------------------------
@@ -53,18 +53,18 @@
 // -------------------------------------
 
 .radio {
-    .radio-bd {
-        cursor: pointer;
+  .radio-bd {
+    cursor: pointer;
 
-        border-radius: $b-rad-circle;
-    }
-    .radio-indicator {
-        width: $b-fs-s - 4;
-        height: $b-fs-s - 4;
+    border-radius: $b-rad-circle;
+  }
+  .radio-indicator {
+    width: $b-fs-s - 4;
+    height: $b-fs-s - 4;
 
-        border-style: none;
-        border-radius: $b-rad-circle;
-    }
+    border-style: none;
+    border-radius: $b-rad-circle;
+  }
 }
 
 // -------------------------------------
@@ -72,24 +72,24 @@
 // -------------------------------------
 
 .radio.active {
-    .radio-indicator {
-        opacity: 1;
-        background: $c-primary;
+  .radio-indicator {
+    opacity: 1;
+    background: $c-primary;
 
-        @extend .fadeIn;
-        @extend .bounceIn;
-    }
-    .radio-bd {
-        border-color: $c-primary;
-    }
+    @extend .fadeIn;
+    @extend .bounceIn;
+  }
+  .radio-bd {
+    border-color: $c-primary;
+  }
 }
 
 .radio.disabled {
-    .radio-bd {
-        cursor: not-allowed;
+  .radio-bd {
+    cursor: not-allowed;
 
-        border-color: rgba(0,0,0,.3);
-    }
+    border-color: rgba(0,0,0,.3);
+  }
 }
 
 // -------------------------------------
@@ -99,34 +99,34 @@
 // ---- Tag ----- //
 
 .radio-tag {
-    position: absolute;
+  position: absolute;
 
-    opacity: 0;
-    outline: 0;
+  opacity: 0;
+  outline: 0;
 }
 
 // ---- Body ----- //
 
 .radio-bd {
-    position: relative;
+  position: relative;
 
-    display: block;
+  display: block;
 
-    width: floor($b-fs-m);
-    height: floor($b-fs-m);
+  width: floor($b-fs-m);
+  height: floor($b-fs-m);
 
-    border-width: $b-bd-width + 1;
-    border-style: $b-bd-style;
+  border-width: $b-bd-width + 1;
+  border-style: $b-bd-style;
 
-    @extend .ui-basis;
+  @extend .ui-basis;
 }
 
 // ---- Tip ----- //
 
 .radio-indicator {
-    display: block;
+  display: block;
 
-    opacity: 0;
+  opacity: 0;
 
-    @extend .center;
+  @extend .center;
 }

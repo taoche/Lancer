@@ -14,7 +14,7 @@
 // Styleguide 2.7
 
 .badge {
-    position: relative;
+  position: relative;
 }
 
 // -------------------------------------
@@ -33,20 +33,20 @@
 // ----- Tip ----- //
 
 .badge {
-    &:after {
-        display: block;
+  &:after {
+    display: block;
 
-        width: 20px;
-        height: 20px;
+    width: 20px;
+    height: 20px;
 
-        content: '';
+    content: '';
 
-        border-radius: 50%;
-        background-color: $c-accent;
+    border-radius: 50%;
+    background-color: $c-accent;
 
-        @extend .center-top-right;
+    @extend .center-top-right;
 
-        top: -10px;
-        right: -10px
-    }
+    top: -10px;
+    right: -10px
+  }
 }
