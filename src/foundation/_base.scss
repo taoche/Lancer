@@ -6,21 +6,20 @@
 // *************************************
 
 html {
-  background  : $c-bg-white;
-  color     : $c-text;
-  font-family : $b-fontFamily;
-  font-size   : $b-fontSize;
-  line-height : $b-lineHeight;
-  -webkit-font-smoothing: antialiased;
+  font-family: $b-fontFamily;
+  font-size: $b-fontSize;
+  line-height: $b-lineHeight;
+  color: $c-text;
+  background: $c-bg-white;
 }
 
 body {
-  font-size : 100%;
+  font-size: 100%;
 }
 
 
 [data-state~='hidden'] {
-  visibility : hidden;
+  visibility: hidden;
 }
 
 // -------------------------------------
@@ -28,16 +27,16 @@ body {
 // -------------------------------------
 ul,
 p {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-li{
+li {
   list-style: none;
 }
 
 dd {
-  margin-left :0;
+  margin-left: 0;
 }
 
 // ----- Headings ----- //
@@ -52,7 +51,6 @@ h4,
   font-family: $b-fontFamily-heading;
   font-weight: bold;
   line-height: 1.2;
-  margin-top: 0;
 }
 
 h1,
@@ -82,19 +80,19 @@ h4,
 // ----- Links ----- //
 
 a {
-  color       : $c-highlight;
-  text-decoration : none;
+  color: $c-highlight;
+  text-decoration: none;
   &:hover,
   &:focus {
-    border-bottom-color : $c-highlight;
-    color         : $c-subdue;
+    color: $c-subdue;
+    border-bottom-color: $c-highlight;
   }
 }
 
 // ----- Images ----- //
 img {
-  height: auto;
   max-width: 100%;
+  height: auto;
 }
 
 // ----- Form ----- //
@@ -103,12 +101,12 @@ button,
 select,
 optgroup,
 textarea {
-  font-size   : inherit;
-  font-family : inherit;
-  margin    : 0;
-  line-height : $b-lh;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: $b-lh;
 }
 
-label{
+label {
   vertical-align: middle;
 }
