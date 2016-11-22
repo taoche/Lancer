@@ -59,8 +59,8 @@
     border-radius: $b-rad-circle;
   }
   .radio-indicator {
-    width: $b-fs-s - 4;
-    height: $b-fs-s - 4;
+    width: $b-fs-s - 6;
+    height: $b-fs-s - 6;
 
     border-style: none;
     border-radius: $b-rad-circle;
@@ -112,8 +112,8 @@
 
   display: block;
 
-  width: floor($b-fs-m);
-  height: floor($b-fs-m);
+  width: 10px;
+  height: 10px;
 
   border-width: $b-bd-width + 1;
   border-style: $b-bd-style;
